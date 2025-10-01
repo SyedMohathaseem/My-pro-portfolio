@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SM Portfolio Pro</title>
+    <meta
+      name="description"
+      content="Professional portfolio of Alex Chen, a passionate Full-Stack Developer specializing in React, Node.js, and modern web development. View my projects and get in touch for collaborations."
+    />
+    <meta name="author" content="Alex Chen" />
+    <meta
+      name="keywords"
+      content="full-stack developer, react developer, web developer, portfolio, alex chen, frontend, backend, javascript, typescript"
+    />
+
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="Alex Chen - Full-Stack Developer Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Professional portfolio showcasing innovative web development projects and technical expertise."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://alexchen-portfolio.com" />
+    <meta
+      property="og:image"
+      content="https://alexchen-portfolio.com/og-image.jpg"
+    />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Alex Chen - Full-Stack Developer Portfolio"
+    />
+    <meta
+      name="twitter:description"
+      content="Professional portfolio showcasing innovative web development projects and technical expertise."
+    />
+    <meta
+      name="twitter:image"
+      content="https://alexchen-portfolio.com/twitter-image.jpg"
+    />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://alexchen-portfolio.com" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="Style.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-content container">
+        <div class="nav-logo hero-text-gradient">SM Folio</div>
+
+        <div class="nav-links">
+          <a href="#hero" class="nav-link active" data-section="hero">Home</a>
+          <a href="#about" class="nav-link" data-section="about">About</a>
+          <a href="#projects" class="nav-link" data-section="projects"
+            >Projects</a
+          >
+          <a href="#resume" class="nav-link" data-section="resume">Resume</a>
+          <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 1rem">
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle theme"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+
+          <button
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+            aria-label="Toggle mobile menu"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#hero" class="mobile-nav-link active" data-section="hero"
+          >Home</a
+        >
+        <a href="#about" class="mobile-nav-link" data-section="about">About</a>
+        <a href="#projects"class="mobile-nav-link" data-section="projects"
+          >Projects</a
+        >
+        <a href="#resume" class="mobile-nav-link" data-section="resume"
+          >Resume</a
+        >
+        <a href="#contact" class="mobile-nav-link" data-section="contact"
+          >Contact</a
+        >
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">
+            Hi, I'm
+            <span class="hero-text-gradient">SYED MOHATHASEEM</span>
+          </h1>
+
+          <div class="hero-subtitle">
+            I'm a
+            <span
+              id="typingText"
+              class="typing-text"
+              style="color: var(--primary); font-weight: 600"
+            ></span>
+          </div>
+
+          <p class="hero-description">
+            I’m a passionate and self-driven full-stack web developer currently pursuing my studies in B.Sc(Computer Science) At Mazharul Uloom College (Ambur) I specialize in building responsive, user-focused web applications using modern technologies like HTML, CSS, JavaScript, Bootstrap, React js, Node.js.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-hero">
+              View My Work
+              <svg
+                style="margin-left: 0.5rem"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19,12 12,19 5,12"></polyline>
+              </svg>
+            </a>
+
+            <a href="#contact" class="btn btn-outline">
+              Get In Touch
+              <svg
+                style="margin-left: 0.5rem"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="m22 2-7 20-4-9-9-4Z"></path>
+                <path d="M22 2 11 13"></path>
+              </svg>
+            </a>
+          </div>
+
+          <div class="hero-social">
+            <a
+              href="https://github.com"
+              class="btn btn-ghost"
+              aria-label="GitHub"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://linkedin.com"
+              class="btn btn-ghost"
+              aria-label="LinkedIn"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                />
+              </svg>
+            </a>
+            <a
+              href="mailto:alex.chen@email.com"
+              class="btn btn-ghost"
+              aria-label="Email"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="m22 2-7 20-4-9-9-4Z"></path>
+                <path d="M22 2 11 13"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <div class="profile-glow"></div>
+          <img
+            src="WhatsApp Image 2025-10-01 at 16.50.25_033f203b.jpg"
+            alt="Alex Chen - Full-Stack Developer"
+            class="profile-image"
+          />
+          <div class="profile-emoji">🚀</div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <button
+          class="btn btn-ghost"
+          onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})"
+          aria-label="Scroll to About"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <polyline points="19,12 12,19 5,12"></polyline>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">
+            About <span class="hero-text-gradient">Me</span>
+          </h2>
+          <!-- <p class="section-description">
+            I'm a passionate developer with 5+ years of experience creating
+            digital solutions that make a difference. Here's what I bring to the
+            table.
+          </p> -->
+        </div>
+
+        <div class="about-content">
+          <div>
+            <div class="about-info">
+              <img
+                src="about.jpg"
+                alt="Alex Chen"
+                class="about-avatar"
+              />
+              <div class="about-details">
+                <h3>SYED MOHATHASEEM</h3>
+                <p class="about-role">Front-end Developer</p>
+                <!-- <p class="about-location">San Francisco, CA</p> -->
+              </div>
+            </div>
+
+            <div class="about-text">
+              <p>
+                With a passion for innovation and a keen eye for detail, I
+                specialize in building modern web applications that deliver
+                exceptional user experiences. My journey began with a Computer
+                Science degree and has evolved through hands-on experience at
+                both startups and Fortune 500 companies.
+              </p>
+
+              <p>
+                I believe in the power of clean code, user-centered design, and
+                continuous learning. When I'm not coding, you can find me
+                exploring new technologies, contributing to open-source
+                projects, or hiking the beautiful trails of Northern California.
+              </p>
+            </div>
+
+            <div class="tech-tags">
+              <span class="tech-tag">Web developer</span>
+              <span class="tech-tag">Problem Solver</span>
+              <span class="tech-tag">Technical Minding</span>
+              <span class="tech-tag">Lifelong Learner</span>
+            </div>
+          </div>
+
+          <div>
+            <h3
+              style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem"
+            >
+              Technical Skills
+            </h3>
+
+            <div id="skillsContainer">
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">HTML</span>
+                  <span class="skill-percentage">95%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="95"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">CSS</span>
+                  <span class="skill-percentage">90%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="90"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">JavaScript</span>
+                  <span class="skill-percentage">50%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="50"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">Bootstrap</span>
+                  <span class="skill-percentage">80%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="80"></div>
+                </div>
+              </div>
+
+              <!-- <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">PostgreSQL</span>
+                  <span class="skill-percentage">82%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="82"></div>
+                </div>
+              </div> -->
+
+              <!-- <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">AWS/Cloud</span>
+                  <span class="skill-percentage">80%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="80"></div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="expertise-grid">
+          <div class="card expertise-card">
+            <div class="expertise-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                style="color: white"
+              >
+                <polyline points="16,18 22,12 16,6"></polyline>
+                <polyline points="8,6 2,12 8,18"></polyline>
+              </svg>
+            </div>
+            <h4 class="expertise-title">Frontend Development</h4>
+            <p class="expertise-description">
+              Building responsive, interactive user interfaces with React,
+              TypeScript, and modern CSS frameworks.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Tailwind CSS</span>
+              <span class="tech-tag">Next.js</span>
+              <span class="tech-tag">Vite</span>
+            </div>
+          </div>
+
+          <div class="card expertise-card">
+            <div class="expertise-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                style="color: white"
+              >
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M3 5v14a9 3 0 0 0 18 0V5"></path>
+                <path d="M3 12a9 3 0 0 0 18 0"></path>
+              </svg>
+            </div>
+            <h4 class="expertise-title">Backend Development</h4>
+            <p class="expertise-description">
+              Developing scalable server-side applications with Node.js,
+              Express, and various databases.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Express</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">Redis</span>
+            </div>
+          </div>
+
+          <div class="card expertise-card">
+            <div class="expertise-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                style="color: white"
+              >
+                <path d="M12 19l-7-7 7-7 7 7-7 7z"></path>
+                <path d="M7.5 15.5l9-9"></path>
+                <path d="M7.5 8.5l9 9"></path>
+              </svg>
+            </div>
+            <h4 class="expertise-title">UI/UX Design</h4>
+            <p class="expertise-description">
+              Creating intuitive and aesthetically pleasing user experiences
+              with modern design principles.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Figma</span>
+              <span class="tech-tag">Adobe XD</span>
+              <span class="tech-tag">Sketch</span>
+              <span class="tech-tag">Framer</span>
+              <span class="tech-tag">Prototyping</span>
+            </div>
+          </div>
+
+          <div class="card expertise-card">
+            <div class="expertise-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                style="color: white"
+              >
+                <polygon
+                  points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"
+                ></polygon>
+              </svg>
+            </div>
+            <h4 class="expertise-title">Performance Optimization</h4>
+            <p class="expertise-description">
+              Optimizing applications for speed, SEO, and user experience across
+              all devices.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Web Vitals</span>
+              <span class="tech-tag">Lighthouse</span>
+              <span class="tech-tag">Bundle Analysis</span>
+              <span class="tech-tag">Caching</span>
+              <span class="tech-tag">CDN</span>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">
+            Featured <span class="hero-text-gradient">Projects</span>
+          </h2>
+          <p class="section-description">
+            Here are some of my recent projects that showcase my skills and
+            passion for creating innovative digital solutions.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <div class="card project-card" data-project="ecommerce">
+            <div style="position: relative; overflow: hidden">
+              <img
+                src="vav.png"
+                alt="E-Commerce Platform"
+                class="project-image"
+              />
+              <div class="project-category">Full-Stack</div>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">E-Commerce Platform</h3>
+              <p class="project-description">
+                A full-stack e-commerce solution with modern design, payment
+                integration, and admin dashboard.
+              </p>
+
+              <!-- <div class="project-tech">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">+3</span>
+              </div> -->
+
+              <div class="project-buttons">
+                <!-- <button
+                  class="btn btn-hero"
+                  style="flex: 1; font-size: 0.875rem"
+                  onclick="openProjectModal('ecommerce')"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    style="margin-right: 0.5rem"
+                  >
+                    <path
+                      d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                    ></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                  Details
+                </button>
+                <a
+                  href="https://github.com"
+                  class="btn btn-ghost"
+                  style="padding: 0.75rem"
+                  aria-label="GitHub"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://demo.com"
+                  class="btn btn-ghost"
+                  style="padding: 0.75rem"
+                  aria-label="Live Demo"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    ></path>
+                    <polyline points="15,3 21,3 21,9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card project-card" data-project="dashboard">
+            <div style="position: relative; overflow: hidden">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop"
+                alt="Analytics Dashboard"
+                class="project-image"
+              />
+              <div class="project-category">Data Visualization</div>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Analytics Dashboard</h3>
+              <p class="project-description">
+                A comprehensive analytics dashboard with real-time data
+                visualization and reporting capabilities.
+              </p>
+
+              <div class="project-tech">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">D3.js</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">+3</span>
+              </div>
+
+              <div class="project-buttons">
+                <button
+                  class="btn btn-hero"
+                  style="flex: 1; font-size: 0.875rem"
+                  onclick="openProjectModal('dashboard')"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    style="margin-right: 0.5rem"
+                  >
+                    <path
+                      d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                    ></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                  Details
+                </button>
+                <a
+                  href="https://github.com"
+                  class="btn btn-ghost"
+                  style="padding: 0.75rem"
+                  aria-label="GitHub"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z"
+                    />
+                  </svg>
+                </a> -->
+                <a
+                  href="https://demo.com"
+                  class="btn btn-ghost"
+                  style="padding: 0.75rem"
+                  aria-label="Live Demo"
+                ></a>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    ></path>
+                    <polyline points="15,3 21,3 21,9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card project-card" data-project="mobile">
+            <div style="position: relative; overflow: hidden">
+              <img
+                src="Screenshot (2).png"
+                class="project-image"
+              />
+              <div class="project-category">Web Series</div>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">HULU Clone Project</h3>
+              <p class="project-description">
+                A React Native social media application with real-time messaging
+                and content sharing.
+              </p>
+
+              <!-- <div class="project-tech">
+                <span class="tech-tag">React Native</span>
+                <span class="tech-tag">Firebase</span>
+                <span class="tech-tag">Redux</span>
+                <span class="tech-tag">+3</span>
+              </div>
+
+              <div class="project-buttons">
+                <button
+                  class="btn btn-hero"
+                  style="flex: 1; font-size: 0.875rem"
+                  onclick="openProjectModal('mobile')"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    style="margin-right: 0.5rem"
+                  >
+                    <path
+                      d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                    ></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                  Details
+                </button>
+                <a
+                  href="https://github.com"
+                  class="btn btn-ghost"
+                  style="padding: 0.75rem"
+                  aria-label="GitHub"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z"
+                    />
+                  </svg>
+                </a> -->
+                <a
+                  href="https://demo.com"
+                  class="btn btn-ghost"
+                  style="padding: 0.75rem"
+                  aria-label="Live Demo"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    ></path>
+                    <polyline points="15,3 21,3 21,9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div style="text-align: center; margin-top: 3rem">
+          <a href="https://github.com" class="btn btn-outline">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              style="margin-right: 0.5rem"
+            >
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z"
+              />
+            </svg>
+            View More on GitHub
+          </a>
+        </div> -->
+      </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">
+            My <span class="hero-text-gradient">Resume</span>
+          </h2>
+          <p class="section-description">
+            A comprehensive overview of my professional journey, education, and
+            achievements in software development.
+          </p>
+          <button
+            class="btn btn-hero"
+            style="margin-top: 2rem"
+            onclick="downloadCV()"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              style="margin-right: 0.5rem"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7,10 12,15 17,10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Download CV
+          </button>
+        </div>
+
+        <!-- <div class="resume-content">
+          <div>
+            <div class="experience-header">
+              <div class="experience-icon">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  style="color: white"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <h3 style="font-size: 1.5rem; font-weight: 700">
+                Professional Experience
+              </h3>
+            </div>
+
+            <div class="experience-item card">
+              <div class="experience-content">
+                <h4 class="experience-title">Senior Full-Stack Developer</h4>
+                <div class="experience-meta">
+                  <span class="experience-company">TechCorp Solutions</span>
+                  <span>📅 2022 - Present</span>
+                  <span>📍 San Francisco, CA</span>
+                </div>
+                <ul class="experience-description">
+                  <li>
+                    Lead development of React-based web applications serving
+                    100K+ users
+                  </li>
+                  <li>
+                    Architected microservices backend using Node.js and
+                    PostgreSQL
+                  </li>
+                  <li>
+                    Implemented CI/CD pipelines reducing deployment time by 60%
+                  </li>
+                  <li>Mentored junior developers and conducted code reviews</li>
+                </ul>
+                <div class="tech-tags">
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">PostgreSQL</span>
+                  <span class="tech-tag">AWS</span>
+                  <span class="tech-tag">Docker</span>
+                  <span class="tech-tag">TypeScript</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="experience-item card">
+              <div class="experience-content">
+                <h4 class="experience-title">Frontend Developer</h4>
+                <div class="experience-meta">
+                  <span class="experience-company"
+                    >Digital Innovations Inc</span
+                  >
+                  <span>📅 2020 - 2022</span>
+                  <span>📍 Remote</span>
+                </div>
+                <ul class="experience-description">
+                  <li>
+                    Developed responsive web applications using React and Vue.js
+                  </li>
+                  <li>
+                    Collaborated with UX team to implement pixel-perfect designs
+                  </li>
+                  <li>
+                    Optimized application performance achieving 95+ Lighthouse
+                    scores
+                  </li>
+                  <li>
+                    Built reusable component library used across multiple
+                    projects
+                  </li>
+                </ul>
+                <div class="tech-tags">
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">Vue.js</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">SCSS</span>
+                  <span class="tech-tag">Webpack</span>
+                  <span class="tech-tag">Jest</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="experience-item card">
+              <div class="experience-content">
+                <h4 class="experience-title">Junior Developer</h4>
+                <div class="experience-meta">
+                  <span class="experience-company">StartupXYZ</span>
+                  <span>📅 2019 - 2020</span>
+                  <span>📍 San Francisco, CA</span>
+                </div>
+                <ul class="experience-description">
+                  <li>
+                    Built MVPs for multiple client projects using modern web
+                    technologies
+                  </li>
+                  <li>
+                    Integrated third-party APIs and payment processing systems
+                  </li>
+                  <li>
+                    Participated in agile development process and sprint
+                    planning
+                  </li>
+                  <li>
+                    Contributed to open-source projects and internal tooling
+                  </li>
+                </ul>
+                <div class="tech-tags">
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Django</span>
+                  <span class="tech-tag">HTML/CSS</span>
+                  <span class="tech-tag">Git</span>
+                  <span class="tech-tag">MySQL</span>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+          <div style="display: flex; flex-direction: column; gap: 2rem">
+            <div>
+              <div class="experience-header">
+                <div
+                  class="experience-icon"
+                  style="background: var(--gradient-secondary)"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    style="color: white"
+                  >
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                  </svg>
+                </div>
+                <h3 style="font-size: 1.25rem; font-weight: 700">Education</h3>
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 1rem">
+                <div class="card" style="padding: 1rem">
+                  <h4
+                    style="
+                      font-weight: 700;
+                      font-size: 0.875rem;
+                      margin-bottom: 0.25rem;
+                    "
+                  >
+                    Bachelor of Computer Science
+                  </h4>
+                  <p
+                    style="
+                      color: var(--primary);
+                      font-weight: 600;
+                      font-size: 0.875rem;
+                      margin-bottom: 0.25rem;
+                    "
+                  >
+                    Mazharul Uloom College (Autonomous),Ambur
+                  </p>
+                  <p
+                    style="
+                      font-size: 0.75rem;
+                      color: var(--muted-foreground);
+                      margin-bottom: 0.25rem;
+                    "
+                  >
+                    📅 2024 - 2027 | 📍 MU College
+                  </p>
+                  <p
+                    style="
+                      font-size: 0.75rem;
+                      color: var(--foreground);
+                      margin-bottom: 0.5rem;
+                    "
+                  >
+                    Specialized in Front-End-Developer Interaction
+                  </p>
+
+
+                  <p style="
+                      font-size: 0.75rem;
+                      color: var(--muted-foreground);
+                      margin-bottom: 0.5rem;
+                    ">
+                    I am currently pursuing my 3rd semester in BSc Computer Science. I have a growing passion for technology, programming, and problem-solving. I'm eager to learn new concepts in computing, especially in areas like software development, data structures, and web technologies. I enjoy working on projects that challenge my skills and help me grow both academically and personally.
+                  </p>
+                  <!-- <span class="tech-tag" style="font-size: 0.75rem"
+                    >GPA: 3.8/4.0</span> -->
+                </div>
+
+                <div class="card" style="padding: 1rem">
+                  <h4
+                    style="
+                      font-weight: 700;
+                      font-size: 0.875rem;
+                      margin-bottom: 0.25rem;
+                    "
+                  >
+                    Schooling
+                  </h4>
+                  <p
+                    style="
+                      color: var(--primary);
+                      font-weight: 600;
+                      font-size: 0.875rem;
+                      margin-bottom: 0.25rem;
+                    "
+                  >
+                   Islamiah Higher Secondary School,Pernambut
+                  </p>
+                  <p
+                    style="
+                      font-size: 0.75rem;
+                      color: var(--muted-foreground);
+                      margin-bottom: 0.25rem;
+                    "
+                  >
+                    📅 2022 - 2024 | 📍 IHSS
+                  </p>
+                  <p
+                    style="
+                      font-size: 0.75rem;
+                      color: var(--muted-foreground);
+                      margin-bottom: 0.5rem;
+                    "
+                  >
+                   I have successfully completed my higher education and built a strong academic foundation. With a focus on continuous learning and personal growth, I am now seeking opportunities to apply my knowledge and skills in a practical environment. I am passionate about [interest in Web Development , front-end developer , modern web trends technologies], and I am motivated to a team or organization I become a part of.
+                  </p>
+                  <!-- <span class="tech-tag" style="font-size: 0.75rem"
+                    >GPA: 3.7/4.0</span
+                  > -->
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="experience-header">
+                <div class="experience-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    style="color: white"
+                  >
+                    <circle cx="12" cy="8" r="7"></circle>
+                    <polyline
+                      points="8.21,13.89 7,23 12,20 17,23 15.79,13.88"
+                    ></polyline>
+                  </svg>
+                </div>
+                <h3 style="font-size: 1.25rem; font-weight: 700">
+                  Certifications
+                </h3>
+              </div>
+
+              <div class="card" style="padding: 1rem">
+                <div
+                  style="display: flex; flex-direction: column; gap: 0.75rem"
+                >
+                  <div style="display: flex; align-items: center; gap: 0.5rem">
+                    <div
+                      style="
+                        width: 0.5rem;
+                        height: 0.5rem;
+                        background: var(--primary);
+                        border-radius: 50%;
+                      "
+                    ></div>
+                    <span style="font-size: 0.875rem; font-weight: 500"
+                      >Coursera Web Development Course (Html,Css,JavaScript)</span
+                    >
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 0.5rem">
+                    <div
+                      style="
+                        width: 0.5rem;
+                        height: 0.5rem;
+                        background: var(--primary);
+                        border-radius: 50%;
+                      "
+                    ></div>
+                    <span style="font-size: 0.875rem; font-weight: 500"
+                      >Badminton(Sports)</span
+                    >
+                  </div>
+                  <!-- <div style="display: flex; align-items: center; gap: 0.5rem">
+                    <div
+                      style="
+                        width: 0.5rem;
+                        height: 0.5rem;
+                        background: var(--primary);
+                        border-radius: 50%;
+                      "
+                    ></div>
+                    <span style="font-size: 0.875rem; font-weight: 500"
+                      >MongoDB Certified Developer</span
+                    >
+                  </div> -->
+                  <!-- <div style="display: flex; align-items: center; gap: 0.5rem">
+                    <div
+                      style="
+                        width: 0.5rem;
+                        height: 0.5rem;
+                        background: var(--primary);
+                        border-radius: 50%;
+                      "
+                    ></div>
+                    <span style="font-size: 0.875rem; font-weight: 500"
+                      >Scrum Master Certification</span
+                    >
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">
+            Get In <span class="hero-text-gradient">Touch</span>
+          </h2>
+          <p class="section-description">
+            Have a project in mind or want to collaborate? I'd love to hear from
+            you. Let's create something amazing together!
+          </p>
+        </div>
+
+        <div class="contact-content">
+          <div class="card contact-form">
+            <h3 class="form-title">Send me a message</h3>
+
+            <form id="contactForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name" class="form-label">Name *</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form-input"
+                    placeholder="Your full name"
+                    required
+                  />
+                  <div class="form-error" id="nameError"></div>
+                </div>
+
+                <div class="form-group">
+                  <label for="email" class="form-label">Email *</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-input"
+                    placeholder="your.email@example.com"
+                    required
+                  />
+                  <div class="form-error" id="emailError"></div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject" class="form-label">Subject *</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  class="form-input"
+                  placeholder="What's this about?"
+                  required
+                />
+                <div class="form-error" id="subjectError"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Message *</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-textarea"
+                  rows="5"
+                  placeholder="Tell me about your project or how I can help you..."
+                  required
+                ></textarea>
+                <div class="form-error" id="messageError"></div>
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn-hero"
+                style="width: 100%; padding: 0.75rem 1rem; font-size: 1rem"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  style="margin-right: 0.5rem"
+                >
+                  <path d="m22 2-7 20-4-9-9-4Z"></path>
+                  <path d="M22 2 11 13"></path>
+                </svg>
+                <span id="submitText">Send Message</span>
+              </button>
+            </form>
+          </div>
+
+          <div class="contact-info">
+            <div>
+              <h3
+                style="
+                  font-size: 1.5rem;
+                  font-weight: 700;
+                  margin-bottom: 1.5rem;
+                "
+              >
+                Contact Information
+              </h3>
+
+              <a href="mailto:alex.chen@email.com" class="contact-item card">
+                <div class="contact-item-content">
+                  <div class="contact-icon">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      style="color: white"
+                    >
+                      <path
+                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                      ></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                  </div>
+                  <div class="contact-details">
+                    <h4>Email</h4>
+                    <p>mohammedmohathaseem25@gmail.com</p>
+                  </div>
+                </div>
+              </a>
+
+              <a href="tel:+15551234567" class="contact-item card">
+                <div class="contact-item-content">
+                  <div class="contact-icon">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      style="color: white"
+                    >
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="contact-details">
+                    <h4>Phone</h4>
+                    <p>+91 9123504183</p>
+                  </div>
+                </div>
+              </a>
+
+              <a
+                href="https://maps.google.com/?q=San+Francisco,+CA"
+                target="_blank"
+                class="contact-item card"
+              >
+                <div class="contact-item-content">
+                  <div class="contact-icon">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      style="color: white"
+                    >
+                      <path
+                        d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                      ></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                  </div>
+                  <div class="contact-details">
+                    <h4>Location</h4>
+                    <p>Pernambut (Tamilnadu,Vlr dist) INDIA</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div>
+              <h3
+                style="
+                  font-size: 1.5rem;
+                  font-weight: 700;
+                  margin-bottom: 1.5rem;
+                "
+              >
+                Follow Me
+              </h3>
+              <div class="social-links">
+                <a
+                  href="https://github.com"
+                  target="_blank"
+                  class="social-link"
+                  aria-label="GitHub"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  class="social-link"
+                  aria-label="LinkedIn"
+                  style="color: #0077b5"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  class="social-link"
+                  aria-label="Twitter"
+                  style="color: #1da1f2"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 48 48">
+<path fill="#fff" d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z"></path><path fill="#fff" d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z"></path><path fill="#cfd8dc" d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z"></path><path fill="#40c351" d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z"></path><path fill="#fff" fill-rule="evenodd" d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z" clip-rule="evenodd"></path>
+</svg>
+                </a>
+                <!-- <a
+                  href="mailto:alex.chen@email.com"
+                  class="social-link"
+                  aria-label="Email"
+                  style="color: #ea4335"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </a> -->
+              </div>
+            </div>
+
+            <div class="card" style="padding: 1.5rem">
+              <div style="display: flex; align-items: flex-start; gap: 1rem">
+                <div
+                  style="
+                    width: 3rem;
+                    height: 3rem;
+                    background: var(--success);
+                    background-opacity: 0.1;
+                    border-radius: 0.5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    style="color: var(--success)"
+                  >
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <h4 style="font-weight: 600; margin-bottom: 0.5rem">
+                    Currently Available
+                  </h4>
+                  <p
+                    style="color: var(--muted-foreground); font-size: 0.875rem"
+                  >
+                    I'm open to new opportunities and exciting projects. Let's
+                    discuss how we can work together!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <line x1="12" y1="19" x2="12" y2="5"></line>
+        <polyline points="5,12 12,5 19,12"></polyline>
+      </svg>
+    </button>
+
+    <!-- Project Modals -->
+    <div id="projectModal" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeProjectModal()">
+          &times;
+        </button>
+        <div class="modal-header">
+          <h2 class="modal-title" id="modalTitle"></h2>
+        </div>
+        <div class="modal-body" id="modalBody">
+          <!-- Content will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -114,8 +114,9 @@ window.addEventListener("scroll", updateActiveSection);
 // Typing Effect
 const typingText = document.getElementById("typingText");
 const titles = [
-  "Frontend Developer",
-  "web Developer",
+  "Frontend Web-Developer",
+  "Freelancer",
+  "FullStack Developer"
 //   "",
 //   "Tech Innovator",
 ];

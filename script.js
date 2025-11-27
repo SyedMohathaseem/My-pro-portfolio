@@ -533,39 +533,82 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// ---------- Contact form submit handler (replace existing block) ----------
+const BACKEND_URL = (() => {
+  // Auto-detect during local dev, otherwise set your deployed URL here:
+  // return "https://your-deployed-backend.example.com";
+  if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+    return "http://localhost:5000";
+  }
+  // If your backend is on the same domain (server + frontend together), use empty string:
+  // return "";
+  // Otherwise set your deployed backend URL here:
+  return "http://localhost:5000"; // <<< <<--- EDIT THIS before deploying
+})();
+
 contactForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   if (!validateForm()) return;
 
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const subject = document.getElementById("subject").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  // UI: show loading
   submitBtn.disabled = true;
   submitText.textContent = "Sending...";
-
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const subject = document.getElementById("subject").value;
-  const message = document.getElementById("message").value;
+  submitBtn.innerHTML = `
+    <div style="width: 20px; height: 20px; border: 2px solid white; border-top: 2px solid transparent; border-radius: 50%; animation: spin 1s linear infinite; margin-right: 0.5rem;"></div>
+    <span>Sending...</span>
+  `;
 
   try {
-    const res = await fetch("https://YOUR_BACKEND_URL/contact", {
+    // Build URL (if BACKEND_URL is ""), use relative path
+    const url = (BACKEND_URL && BACKEND_URL !== "") ? `${BACKEND_URL.replace(/\/$/, "")}/contact` : "/contact";
+
+    console.log("Contact: sending to", url, { name, email, subject });
+
+    const res = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, subject, message }),
     });
 
-    const data = await res.json();
+    // helpful debug logging
+    console.log("Contact: response status", res.status);
 
-    if (data.success) {
-      alert("Message sent successfully!");
+    const data = await res.json().catch(() => null);
+
+    if (!res.ok) {
+      // If backend returned JSON error message, show it. Otherwise generic.
+      const errMsg = data && data.message ? data.message : `Server returned ${res.status}`;
+      console.error("Contact: server error", errMsg, data);
+      alert("Failed to send message: " + errMsg);
+    } else if (data && data.success) {
+      // success
+      alert(data.message || "Message sent successfully! Thank you.");
       contactForm.reset();
       clearErrors();
     } else {
-      alert("Failed: " + data.message);
+      console.warn("Contact: unexpected response", data);
+      alert(data && data.message ? data.message : "Message not sent. Try again.");
     }
   } catch (err) {
-    alert("Something went wrong! Try again.");
+    // network / CORS / DNS errors land here
+    console.error("Contact: network/CORS error", err);
+    alert("Something went wrong! Try again. (Check console for details.)");
+  } finally {
+    // Reset button UI
+    submitBtn.disabled = false;
+    submitText.textContent = "Send Message";
+    submitBtn.innerHTML = `
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.5rem;">
+        <path d="m22 2-7 20-4-9-9-4Z"></path>
+        <path d="M22 2 11 13"></path>
+      </svg>
+      <span>Send Message</span>
+    `;
   }
-
-  submitBtn.disabled = false;
-  submitText.textContent = "Send Message";
 });

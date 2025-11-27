@@ -226,28 +226,45 @@ contactForm.addEventListener("submit", async (e) => {
                 <span>Sending...</span>
             `;
 
-  // Simulate form submission
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const subject = document.getElementById("subject").value.trim();
+  const message = document.getElementById("message").value.trim();
 
-  // Show success message
-  alert(
-    "Message sent successfully! Thank you for reaching out. I'll get back to you soon."
-  );
+  try {
+    const response = await fetch("/.netlify/functions/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, subject, message }),
+    });
 
-  // Reset form
-  contactForm.reset();
-  clearErrors();
+    if (!response.ok) throw new Error("Failed to send message");
 
-  // Reset button
-  submitBtn.disabled = false;
-  submitText.textContent = "Send Message";
-  submitBtn.innerHTML = `
+    // Show success message
+    alert(
+      "Message sent successfully! Thank you for reaching out. I'll get back to you soon."
+    );
+
+    // Reset form
+    contactForm.reset();
+    clearErrors();
+  } catch (error) {
+    alert("Error sending message. Please try again later.");
+    console.error(error);
+  } finally {
+    // Reset button
+    submitBtn.disabled = false;
+    submitText.textContent = "Send Message";
+    submitBtn.innerHTML = `
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.5rem;">
                     <path d="m22 2-7 20-4-9-9-4Z"></path>
                     <path d="M22 2 11 13"></path>
                 </svg>
                 <span>Send Message</span>
             `;
+  }
 });
 
 // Add spin animation for loading
@@ -516,63 +533,19 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 });
 
 // Initialize animations on load
-document.addEventListener("DOMContentLoaded", () => {
-  // Add initial animation classes
-  const heroElements = document.querySelectorAll(
-    "#hero .hero-text, #hero .hero-image"
-  );
-  heroElements.forEach((el, index) => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(30px)";
-
-    setTimeout(() => {
-      el.style.transition = "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)";
-      el.style.opacity = "1";
-      el.style.transform = "translateY(0)";
-    }, index * 200);
-  });
+const animatedElements = document.querySelectorAll("[data-animate]");
+animatedElements.forEach((el, index) => {
+  setTimeout(() => {
+    el.style.opacity = "1";
+    el.style.transform = "translateY(0)";
+  }, index * 200);
 });
 
-// ====== BACKEND URL (Render) ======
-const BACKEND_URL = "https://portfolio-backend-y4ux.onrender.com";
-
-// ====== Contact Form Handler ======
-contactForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  if (!validateForm()) return;
-
-  submitBtn.disabled = true;
-  submitText.textContent = "Sending...";
-
-  const formData = {
-    name: document.getElementById("name").value.trim(),
-    email: document.getElementById("email").value.trim(),
-    subject: document.getElementById("subject").value.trim(),
-    message: document.getElementById("message").value.trim(),
-  };
-
-  try {
-    const response = await fetch(`${BACKEND_URL}/contact`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
-
-    const data = await response.json();
-
-    if (data.success) {
-      alert("Message sent successfully!");
-      contactForm.reset();
-      clearErrors();
-    } else {
-      alert("Failed: " + data.message);
-    }
-  } catch (err) {
-    console.error("Contact error:", err);
-    alert("Something went wrong! Please try again.");
-  }
-
-  submitBtn.disabled = false;
-  submitText.textContent = "Send Message";
+// Fetch request to serverless function
+const response = await fetch('/.netlify/functions/contact', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ name, email, subject, message })
 });

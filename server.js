@@ -17,6 +17,9 @@ app.use(express.static(path.join(__dirname)));
 // Email configuration
 const transporter = nodemailer.createTransport({
   service: 'gmail',
+  host: 'smtp.gmail.com',
+  port: 587,
+  secure: false,
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS
@@ -38,7 +41,10 @@ app.post('/api/contact', async (req, res) => {
   try {
     const { name, email, subject, message } = req.body;
 
-    console.log('📨 New contact form submission:', { name, email, subject });
+    console.log('\n📨 New contact form submission:');
+    console.log('  Name:', name);
+    console.log('  Email:', email);
+    console.log('  Subject:', subject);
 
     // Validation
     if (!name || !email || !subject || !message) {
@@ -48,50 +54,58 @@ app.post('/api/contact', async (req, res) => {
       });
     }
 
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: process.env.RECEIVER_EMAIL,
+    // Send email to admin FROM user's email with reply-to
+    console.log('⏳ Sending email to admin...');
+    const adminEmail = await transporter.sendMail({
+      from: `"${name}" <${process.env.EMAIL_USER}>`,
       replyTo: email,
+      to: process.env.RECEIVER_EMAIL,
       subject: `New Contact Form: ${subject}`,
       html: `
-        <h2 style="color: #333;">New Message from Portfolio</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Subject:</strong> ${subject}</p>
+        <h2 style="color: #333;">📨 New Message from Your Portfolio</h2>
+        <p><strong>👤 Name:</strong> ${name}</p>
+        <p><strong>📧 Email:</strong> <a href="mailto:${email}">${email}</a></p>
+        <p><strong>📝 Subject:</strong> ${subject}</p>
         <hr>
-        <p><strong>Message:</strong></p>
-        <p style="white-space: pre-wrap; font-size: 14px;">${message}</p>
+        <p><strong>💬 Message:</strong></p>
+        <p style="white-space: pre-wrap; font-size: 14px; background: #f5f5f5; padding: 15px; border-left: 4px solid #4CAF50;">${message}</p>
+        <hr>
+        <p style="font-size: 12px; color: #666;">Reply directly to this email to respond to ${name}</p>
       `
-    };
+    });
+    console.log('✅ Admin email sent! Message ID:', adminEmail.messageId);
+    console.log('   From: "' + name + '" <' + process.env.EMAIL_USER + '>');
+    console.log('   Reply-To:', email);
 
-    // Send email to you
-    const info = await transporter.sendMail(mailOptions);
-    console.log('✅ Email sent to admin:', info.response);
-
-    // Confirmation email to user
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
+    // Send confirmation email to user
+    console.log('⏳ Sending confirmation email to user...');
+    const userEmail = await transporter.sendMail({
+      from: `"Syed Mohathaseem" <${process.env.EMAIL_USER}>`,
       to: email,
-      subject: 'Message Received - Thank You! ✅',
+      subject: '✅ Message Received - Thank You!',
       html: `
         <h2>Thank you for reaching out!</h2>
         <p>Hi ${name},</p>
         <p>I received your message and will get back to you as soon as possible.</p>
-        <p><strong>Your message:</strong></p>
-        <p style="white-space: pre-wrap; font-size: 14px; background: #f5f5f5; padding: 10px;">${message}</p>
+        <hr>
+        <p><strong>📝 Your message:</strong></p>
+        <p style="white-space: pre-wrap; font-size: 14px; background: #f5f5f5; padding: 15px; border-left: 4px solid #2196F3;">${message}</p>
         <hr>
         <p>Best regards,<br><strong>Syed Mohathaseem</strong></p>
+        <p style="font-size: 12px; color: #666;">This is an automated reply. I will contact you shortly.</p>
       `
     });
-    console.log('✅ Confirmation email sent to user:', email);
+    console.log('✅ User confirmation email sent! Message ID:', userEmail.messageId);
+    console.log('   To:', email);
 
     res.status(200).json({ 
       success: true, 
-      message: 'Email sent successfully! Check your inbox.' 
+      message: '✅ Email sent successfully! Check your inbox.' 
     });
 
   } catch (error) {
-    console.error('❌ Email error:', error);
+    console.error('\n❌ Email error:', error.message);
+    console.error('Error code:', error.code);
     res.status(500).json({ 
       success: false, 
       error: error.message 
@@ -101,6 +115,7 @@ app.post('/api/contact', async (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+  console.log(`\n🚀 Server running on http://localhost:${PORT}`);
   console.log(`📧 Email configured for: ${process.env.EMAIL_USER}`);
+  console.log(`📬 Receiving emails to: ${process.env.RECEIVER_EMAIL}\n`);
 });

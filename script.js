@@ -533,3 +533,39 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+contactForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  if (!validateForm()) return;
+
+  submitBtn.disabled = true;
+  submitText.textContent = "Sending...";
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const subject = document.getElementById("subject").value;
+  const message = document.getElementById("message").value;
+
+  try {
+    const res = await fetch("https://YOUR_BACKEND_URL/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, subject, message }),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      alert("Message sent successfully!");
+      contactForm.reset();
+      clearErrors();
+    } else {
+      alert("Failed: " + data.message);
+    }
+  } catch (err) {
+    alert("Something went wrong! Try again.");
+  }
+
+  submitBtn.disabled = false;
+  submitText.textContent = "Send Message";
+});

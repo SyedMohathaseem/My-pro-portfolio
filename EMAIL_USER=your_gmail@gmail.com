@@ -1,4 +1,0 @@
-EMAIL_USER=your_gmail@gmail.com
-EMAIL_PASS=your_app_password
-RECEIVER_EMAIL=mohammedmohathaseem25@gmail.com
-PORT=5000

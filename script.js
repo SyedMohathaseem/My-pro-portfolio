@@ -533,3 +533,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
+function sendEmail() {
+  email.send({
+    Host: "smtp.gmail.com",
+    Username: "syedmohathaseem@gmaul.com",
+    Password: "yourpassword",
+    To: 'mohammedmohathaseem25@gmail.com',
+    from : document.getElementById("email").value,
+    Subject: "New contact form submission",
+    Body:`THE MSG IS SEN D` 
+  }).then((message) => {
+    alert("Message sent successfully");
+  })
+}

@@ -495,11 +495,17 @@ document.getElementById("projectModal").addEventListener("click", (e) => {
 
 // Download CV function
 function downloadCV() {
-  // Create a dummy download link
-  alert(
-    "CV download initiated! In a real implementation, this would download the actual CV file."
-  );
+  const link = document.createElement("a");
+
+  // Path where your CV is stored
+  link.href = "assets/Mohathaseem-CV.pdf";
+
+  // File name for downloaded file
+  link.download = "Mohathaseem-CV.pdf";
+
+  link.click();
 }
+
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {

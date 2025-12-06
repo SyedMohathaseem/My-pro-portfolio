@@ -479,6 +479,7 @@ h6 {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .section-description {
@@ -486,6 +487,7 @@ h6 {
   color: var(--muted-foreground);
   max-width: 800px;
   margin: 0 auto;
+  text-align: center;
 }
 
 /* About Section */
@@ -1079,6 +1081,7 @@ h6 {
 
   .contact-content {
     grid-template-columns: 1fr 1fr;
+    margin-top: 20px;
   }
 }
 
@@ -1200,3 +1203,84 @@ h6 {
   background: var(--primary);
   border-radius: 50%;
 }
+
+/* --- 1. HIDE DEFAULT CURSOR & CURSOR STYLES --- */
+* {
+    cursor: none; /* Hides the standard mouse pointer */
+}
+
+.cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background-color: #00f3ff; /* Your Primary Neon Color */
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+    transform: translate(-50%, -50%);
+}
+
+/* Expansion effect when hovering over links */
+body.hovering .cursor-outline {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #00f3ff;
+    mix-blend-mode: difference;
+}
+
+/* Hide custom cursor on mobile (touch devices) */
+@media (max-width: 768px) {
+    .cursor-dot, .cursor-outline { display: none; }
+    * { cursor: auto; }
+}
+
+/* --- 2. SCROLL REVEAL ANIMATION --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- 3. 3D TILT SETUP --- */
+.project-card {
+    /* Required for the 3D tilt JS to look correct */
+    transition: transform 0.1s;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+/* --- 4. TYPING EFFECT CURSOR --- */
+.typing-text {
+    border-right: 2px solid #00f3ff;
+    padding-right: 5px;
+    animation: blink 0.75s infinite;
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+
+

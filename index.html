@@ -61,6 +61,10 @@
     <link rel="stylesheet" href="Style.css" />
   </head>
   <body>
+  
+    <div class="cursor-dot" data-cursor-dot></div>
+<div class="cursor-outline" data-cursor-outline></div>
+
     <!-- Navigation -->
     <nav class="navbar">
       <div class="nav-content container">
@@ -1425,7 +1429,7 @@
                 <h3 style="font-size: 1.25rem; font-weight: 700">Education</h3>
               </div>
 
-              <div style="display: flex; flex-direction: column; gap: 1rem">
+              <div  style="display: flex; flex-direction: column; gap: 1rem">
                 <div class="card" style="padding: 1rem">
                   <h4
                     style="
@@ -1436,16 +1440,17 @@
                   >
                     Bachelor of Computer Science
                   </h4>
-                  <p
+                  <a href="https://mucollege.ac.in/" target="_blank" rel="noopener noreferrer"
                     style="
                       color: var(--primary);
                       font-weight: 600;
                       font-size: 0.875rem;
                       margin-bottom: 0.25rem;
+                      text-decoration: none;
                     "
                   >
                     Mazharul Uloom College (Autonomous),Ambur
-                  </p>
+                </a>
                   <p
                     style="
                       font-size: 0.75rem;
@@ -1487,16 +1492,17 @@
                   >
                     Schooling
                   </h4>
-                  <p
+                  <a href="https://share.google/fpblIo13gp1cBNxiS" target="_blank" rel="noopener noreferrer"
                     style="
                       color: var(--primary);
                       font-weight: 600;
                       font-size: 0.875rem;
                       margin-bottom: 0.25rem;
+                      text-decoration: none;
                     "
                   >
                    Islamiah Higher Secondary School,Pernambut
-                  </p>
+                </a>
                   <p
                     style="
                       font-size: 0.75rem;
@@ -1610,13 +1616,11 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">
-            Get In <span class="hero-text-gradient">Touch</span>
-          </h2>
-          <p class="section-description">
+   <section id="contact" class="section">
+  <div class="container">
+    <h2 class="section-title">Get In <span class="hero-text-gradient">Touch</span></h2>
+
+    <p class="section-description">
             Have a project in mind or want to collaborate? I'd love to hear from
             you. Let's create something amazing together!
           </p>
@@ -1626,84 +1630,58 @@
           <div class="card contact-form">
             <h3 class="form-title">Send me a message</h3>
 
-            <form id="contactForm" onsubmit="sendEmail(); reset(); return false;">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="name" class="form-label">Name *</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    class="form-input"
-                    placeholder="Your full name"
-                    required
-                  />
-                  <div class="form-error" id="nameError"></div>
-                </div>
+    <form id="contactForm">
+  <div class="form-row">
+    <input type="hidden" name="access_key" value="f6168453-f15f-42a8-97de-c50455586dd5">
 
-                <div class="form-group">
-                  <label for="email" class="form-label">Email *</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    class="form-input"
-                    placeholder="your.email@example.com"
-                    required
-                  />
-                  <div class="form-error" id="emailError"></div>
-                </div>
-              </div>
+    <div class="form-group">
+      <label class="form-label">Name *</label>
+      <input id="name" name="name" class="form-input hover-target" type="text" placeholder="Your Name" required>
+      <span id="nameError" class="form-error"></span>
+    </div>
 
-              <div class="form-group">
-                <label for="subject" class="form-label">Subject *</label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  class="form-input"
-                  placeholder="What's this about?"
-                  required
-                />
-                <div class="form-error" id="subjectError"></div>
-              </div>
+    <div class="form-group">
+      <label for="email" class="form-label">Email *</label>
+      <input id="email" name="email" class="form-input hover-target" type="email" placeholder="Your Email" required>
+      <span id="emailError" class="form-error"></span>
+    </div>
 
-              <div class="form-group">
-                <label for="message" class="form-label">Message *</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  class="form-textarea"
-                  rows="5"
-                  placeholder="Tell me about your project or how I can help you..."
-                  required
-                ></textarea>
-                <div class="form-error" id="messageError"></div>
-              </div>
+    <div class="form-group">
+      <label for="message" class="form-label">Message *</label>
+      <textarea id="message" name="message" class="form-textarea hover-target" placeholder="Write your message here..." rows="5" required></textarea>
+      <span id="messageError" class="form-error"></span>
+    </div>
 
-              <button
-                type="submit"
-                class="btn btn-hero"
-                style="width: 100%; padding: 0.75rem 1rem; font-size: 1rem"
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  style="margin-right: 0.5rem"
-                >
-                  <path d="m22 2-7 20-4-9-9-4Z"></path>
-                  <path d="M22 2 11 13"></path>
-                </svg>
-                <span id="submitText">Send Message</span>
-              </button>
-            </form>
-          </div>
+    <div style="text-align: center; margin-top: 25px;">
+      <button
+        id="submitBtn"
+        type="submit"
+        class="btn btn-hero hover-target"
+        style="width: auto; padding: 14px 40px; min-width: 180px; display: inline-flex; justify-content: center; align-items: center; border-radius: 50px;"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          style="margin-right: 0.5rem"
+        >
+          <path d="m22 2-7 20-4-9-9-4Z"></path>
+          <path d="M22 2 11 13"></path>
+        </svg>
+        <span id="submitText">Send Message</span>
+      </button>
+    </div>
 
-          <div class="contact-info">
+    <p id="formStatus" style="margin-top:15px; font-weight:600; text-align: center; color: var(--primary); display: none;"></p>
+  </div>
+</form>
+ 
+</div>
+
+      <div class="contact-info">
             <div>
               <h3
                 style="
@@ -1917,7 +1895,9 @@
           </div>
         </div>
       </div>
-    </section>
+      </div>
+    </section>   
+
 
     <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
@@ -1948,6 +1928,161 @@
         </div>
       </div>
     </div>
+
+    <!-- ⭐ AI MODERN 50% SCREEN PORTFOLIO POPUP -->
+<div id="ai-popup"
+  style="
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(14px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+    animation: fadeIn 0.45s ease forwards;
+">
+
+  <!-- POPUP CARD (50% SCREEN) -->
+  <div id="ai-popup-card"
+    style="
+      width: 50vw;
+      height: 50vh;
+      min-width: 330px;
+      min-height: 330px;
+      border-radius: 28px;
+      background: linear-gradient(
+        160deg,
+        rgba(10,10,25,0.65),
+        rgba(25,0,45,0.45),
+        rgba(0,85,155,0.25)
+      );
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(35px);
+      box-shadow: 
+        0 0 90px rgba(0,255,255,0.28),
+        0 0 50px rgba(255,0,200,0.15) inset;
+      padding: 50px;
+      position: relative;
+      text-align: center;
+      animation: scaleUp 0.55s ease forwards;
+      overflow: hidden;
+    "
+  >
+
+    <!-- Neon Gradient Glow Background Mesh -->
+    <div style="
+      position:absolute;
+      inset:0;
+      z-index:-1;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(0,255,255,0.3), transparent 60%),
+        radial-gradient(circle at 80% 60%, rgba(255,0,180,0.25), transparent 70%),
+        radial-gradient(circle at 50% 90%, rgba(0,180,255,0.20), transparent 75%);
+      filter: blur(40px);
+    "></div>
+
+    <!-- Close Button -->
+    <button id="ai-close-btn"
+      style="
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 26px;
+        font-weight: 300;
+        color: #fff;
+        background: rgba(255,255,255,0.07);
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        backdrop-filter: blur(10px);
+      ">
+      ×
+    </button>
+
+    <!-- MAIN HEADLINE -->
+    <h1 style="
+      margin-top: 40px;
+      font-size: 38px;
+      font-weight: 800;
+      background: linear-gradient(90deg, #00d9ff, #645BFF, #ff35bb);
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    ">
+      Welcome to My Portfolio
+    </h1>
+
+    <!-- Subtitle -->
+    <p style="
+      margin-top: 15px;
+      font-size: 20px;
+      color: #d8faff;
+      opacity: 0.95;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+    ">
+      I am <span style="color:#8cf9ff;">Syed Mohathaseem</span>
+    </p>
+
+    <!-- Modern Tagline -->
+    <p style="
+      margin-top: 10px;
+      font-size: 17px;
+      color: #d6d6d6;
+      opacity: 0.85;
+    ">
+      Creating intelligent, beautiful & interactive digital experiences
+    </p>
+
+    <!-- Skills Row -->
+    <p style="
+      margin-top: 8px;
+      font-size: 15px;
+      color: #d0d0d0;
+      opacity: 0.75;
+      letter-spacing: 0.5px;
+    ">
+      Web Development • UI/UX • AI Engineering • Creative Design
+    </p>
+
+  </div>
+
+  <style>
+    @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+    @keyframes fadeOut { from {opacity:1;} to {opacity:0;} }
+    @keyframes scaleUp {
+      0% { transform: scale(0.75); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @media (max-width: 700px) {
+      #ai-popup-card {
+        width: 85vw !important;
+        height: 55vh !important;
+        padding: 30px !important;
+      }
+      #ai-popup-card h1 { font-size: 30px !important; }
+      #ai-popup-card p { font-size: 14px !important; }
+    }
+  </style>
+
+  <script>
+    const popup = document.getElementById("ai-popup");
+    const closeBtn = document.getElementById("ai-close-btn");
+
+    closeBtn.addEventListener("click", () => {
+      popup.style.animation = "fadeOut 0.45s ease forwards";
+      setTimeout(() => popup.remove(), 450);
+    });
+  </script>
+
+</div>
 
     <script src="script.js"></script>
   </body>

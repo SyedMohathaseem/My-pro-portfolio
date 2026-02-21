@@ -1,4 +1,17 @@
 // script.js
+
+// Welcome Popup
+const welcomeOverlay = document.getElementById("welcomeOverlay");
+const welcomeBtn = document.getElementById("welcomeBtn");
+
+welcomeBtn.addEventListener("click", () => {
+  welcomeOverlay.classList.add("hidden");
+  document.body.style.overflow = "auto";
+});
+
+// Prevent scrolling while welcome screen is visible
+document.body.style.overflow = "hidden";
+
 // Theme Management
 const themeToggle = document.getElementById("themeToggle");
 const body = document.body;
@@ -116,9 +129,9 @@ const typingText = document.getElementById("typingText");
 const titles = [
   "Frontend Web-Developer",
   "Freelancer",
-  "FullStack Developer"
-//   "",
-//   "Tech Innovator",
+  "FullStack Developer",
+  //   "",
+  //   "Tech Innovator",
 ];
 
 let currentTitleIndex = 0;
@@ -126,6 +139,9 @@ let currentCharIndex = 0;
 let isDeleting = false;
 
 function typeWriter() {
+  // Guard clause: only run if typingText element exists
+  if (!typingText) return;
+
   const currentTitle = titles[currentTitleIndex];
 
   if (isDeleting) {
@@ -150,8 +166,10 @@ function typeWriter() {
   setTimeout(typeWriter, typeSpeed);
 }
 
-// Start typing effect
-typeWriter();
+// Start typing effect only if element exists
+if (typingText) {
+  typeWriter();
+}
 
 // Scroll animations
 const observerOptions = {
@@ -212,42 +230,42 @@ scrollToTopBtn.addEventListener("click", () => {
 // const submitText = document.getElementById("submitText");
 
 // contactForm.addEventListener("submit", async (e) => {
-  // e.preventDefault();
+// e.preventDefault();
 
-  // if (!validateForm()) {
-    // return;
-  // }
+// if (!validateForm()) {
+// return;
+// }
 
-  // // Show loading state
-  // submitBtn.disabled = true;
-  // submitText.textContent = "Sending...";
-  // submitBtn.innerHTML = `
-  //               <div style="width: 20px; height: 20px; border: 2px solid white; border-top: 2px solid transparent; border-radius: 50%; animation: spin 1s linear infinite; margin-right: 0.5rem;"></div>
-  //               <span>Sending...</span>
-  //           `;
+// // Show loading state
+// submitBtn.disabled = true;
+// submitText.textContent = "Sending...";
+// submitBtn.innerHTML = `
+//               <div style="width: 20px; height: 20px; border: 2px solid white; border-top: 2px solid transparent; border-radius: 50%; animation: spin 1s linear infinite; margin-right: 0.5rem;"></div>
+//               <span>Sending...</span>
+//           `;
 
-  // // Simulate form submission
-  // await new Promise((resolve) => setTimeout(resolve, 2000));
+// // Simulate form submission
+// await new Promise((resolve) => setTimeout(resolve, 2000));
 
-  // // Show success message
-  // alert(
-  //   "Message sent successfully! Thank you for reaching out. I'll get back to you soon."
-  // );
+// // Show success message
+// alert(
+//   "Message sent successfully! Thank you for reaching out. I'll get back to you soon."
+// );
 
-  // Reset form
-  // contactForm.reset();
-  // clearErrors();
+// Reset form
+// contactForm.reset();
+// clearErrors();
 
-  // // Reset button
-  // submitBtn.disabled = false;
-  // submitText.textContent = "Send Message";
-  // submitBtn.innerHTML = `
-  //               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.5rem;">
-  //                   <path d="m22 2-7 20-4-9-9-4Z"></path>
-  //                   <path d="M22 2 11 13"></path>
-  //               </svg>
-  //               <span>Send Message</span>
-  //           `;
+// // Reset button
+// submitBtn.disabled = false;
+// submitText.textContent = "Send Message";
+// submitBtn.innerHTML = `
+//               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.5rem;">
+//                   <path d="m22 2-7 20-4-9-9-4Z"></path>
+//                   <path d="M22 2 11 13"></path>
+//               </svg>
+//               <span>Send Message</span>
+//           `;
 // });
 
 // Add spin animation for loading
@@ -310,7 +328,7 @@ function showError(fieldId, message) {
 function clearErrors() {
   const errorElements = document.querySelectorAll(".form-error");
   const inputElements = document.querySelectorAll(
-    ".form-input, .form-textarea"
+    ".form-input, .form-textarea",
   );
 
   errorElements.forEach((el) => (el.textContent = ""));
@@ -421,8 +439,8 @@ function openProjectModal(projectId) {
   modalTitle.textContent = project.title;
   modalBody.innerHTML = `
                 <img src="${project.image}" alt="${
-    project.title
-  }" style="width: 100%; height: 250px; object-fit: cover; border-radius: 0.5rem; margin-bottom: 1.5rem;">
+                  project.title
+                }" style="width: 100%; height: 250px; object-fit: cover; border-radius: 0.5rem; margin-bottom: 1.5rem;">
                 
                 <div style="margin-bottom: 1.5rem;">
                     <p style="color: var(--muted-foreground); line-height: 1.6;">${
@@ -437,7 +455,7 @@ function openProjectModal(projectId) {
                           .map(
                             (feature) => `
                             <div class="modal-feature">${feature}</div>
-                        `
+                        `,
                           )
                           .join("")}
                     </div>
@@ -452,7 +470,7 @@ function openProjectModal(projectId) {
                             <span class="tech-tag" style="background: var(--muted); color: var(--muted-foreground); padding: 0.5rem 1rem; border-radius: 0.5rem; font-size: 0.875rem;">
                                 ${tech}
                             </span>
-                        `
+                        `,
                           )
                           .join("")}
                     </div>
@@ -506,7 +524,6 @@ function downloadCV() {
   link.click();
 }
 
-
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
@@ -525,7 +542,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 document.addEventListener("DOMContentLoaded", () => {
   // Add initial animation classes
   const heroElements = document.querySelectorAll(
-    "#hero .hero-text, #hero .hero-image"
+    "#hero .hero-text, #hero .hero-image",
   );
   heroElements.forEach((el, index) => {
     el.style.opacity = "0";
@@ -545,117 +562,118 @@ const form = document.getElementById("contactForm");
 const statusEl = document.getElementById("formStatus");
 const submitBtn = document.getElementById("submitBtn");
 
-
 form.addEventListener("submit", async function (e) {
-e.preventDefault();
-submitBtn.disabled = true;
-submitBtn.textContent = "Sending...";
+  e.preventDefault();
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Sending...";
 
+  const formData = new FormData(form);
 
-const formData = new FormData(form);
+  try {
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
 
+    const data = await res.json();
+    statusEl.style.display = "block";
 
-try {
-const res = await fetch("https://api.web3forms.com/submit", {
-method: "POST",
-body: formData,
+    if (data.success) {
+      statusEl.style.color = "green";
+      statusEl.textContent =
+        "Message sent successfully! I will contact you soon.";
+      form.reset();
+    } else {
+      statusEl.style.color = "red";
+      statusEl.textContent = "Failed to send message. Please try again.";
+    }
+  } catch (err) {
+    statusEl.style.display = "block";
+    statusEl.style.color = "red";
+    statusEl.textContent = "Network error. Try again later.";
+  }
+
+  submitBtn.disabled = false;
+  submitBtn.textContent = "Send Message";
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  // --- 1. MAGNETIC CURSOR LOGIC (Optimized) ---
+  const cursorDot = document.querySelector("[data-cursor-dot]");
+  const cursorOutline = document.querySelector("[data-cursor-outline]");
+  const hoverTargets = document.querySelectorAll("a, button, .hover-target");
 
-const data = await res.json();
-statusEl.style.display = "block";
+  window.addEventListener("mousemove", (e) => {
+    const posX = e.clientX;
+    const posY = e.clientY;
 
+    // Dot follows instantly
+    if (cursorDot) {
+      cursorDot.style.left = `${posX}px`;
+      cursorDot.style.top = `${posY}px`;
+    }
 
-if (data.success) {
-statusEl.style.color = "green";
-statusEl.textContent = "Message sent successfully! I will contact you soon.";
-form.reset();
-} else {
-statusEl.style.color = "red";
-statusEl.textContent = "Failed to send message. Please try again.";
-}
-} catch (err) {
-statusEl.style.display = "block";
-statusEl.style.color = "red";
-statusEl.textContent = "Network error. Try again later.";
-}
+    // Outline follows with a smooth animation using Keyframes instead of .animate() loop
+    if (cursorOutline) {
+      cursorOutline.animate(
+        {
+          left: `${posX}px`,
+          top: `${posY}px`,
+        },
+        { duration: 500, fill: "forwards" },
+      );
+    }
+  });
 
+  // NOTE: If the cursor still lags, remove the .animate block above
+  // and add "transition: all 0.1s ease;" to your .cursor-outline CSS class instead.
 
-submitBtn.disabled = false;
-submitBtn.textContent = "Send Message";
-});
+  // Expand cursor on hover
+  hoverTargets.forEach((el) => {
+    el.addEventListener("mouseenter", () =>
+      document.body.classList.add("hovering"),
+    );
+    el.addEventListener("mouseleave", () =>
+      document.body.classList.remove("hovering"),
+    );
+  });
 
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // --- 1. MAGNETIC CURSOR LOGIC (Optimized) ---
-    const cursorDot = document.querySelector('[data-cursor-dot]');
-    const cursorOutline = document.querySelector('[data-cursor-outline]');
-    const hoverTargets = document.querySelectorAll('a, button, .hover-target');
-
-    window.addEventListener('mousemove', (e) => {
-        const posX = e.clientX;
-        const posY = e.clientY;
-
-        // Dot follows instantly
-        if (cursorDot) {
-            cursorDot.style.left = `${posX}px`;
-            cursorDot.style.top = `${posY}px`;
+  // --- 2. SCROLL REVEAL ANIMATION ---
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
         }
+      });
+    },
+    { threshold: 0.1 },
+  );
 
-        // Outline follows with a smooth animation using Keyframes instead of .animate() loop
-        if (cursorOutline) {
-            cursorOutline.animate({
-                left: `${posX}px`,
-                top: `${posY}px`
-            }, { duration: 500, fill: "forwards" });
-        }
+  const revealElements = document.querySelectorAll(".reveal");
+  revealElements.forEach((el) => revealObserver.observe(el));
+
+  // --- 3. 3D TILT EFFECT FOR CARDS ---
+  const cards = document.querySelectorAll(".project-card");
+
+  cards.forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      // Reduced intensity to prevent visual jitter
+      const rotateX = ((y - centerY) / centerY) * -5;
+      const rotateY = ((x - centerX) / centerX) * 5;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
     });
 
-    // NOTE: If the cursor still lags, remove the .animate block above 
-    // and add "transition: all 0.1s ease;" to your .cursor-outline CSS class instead.
-
-    // Expand cursor on hover
-    hoverTargets.forEach(el => {
-        el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
-        el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale(1)`;
     });
-
-    // --- 2. SCROLL REVEAL ANIMATION ---
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
-        });
-    }, { threshold: 0.1 });
-
-    const revealElements = document.querySelectorAll('.reveal');
-    revealElements.forEach(el => revealObserver.observe(el));
-
-    // --- 3. 3D TILT EFFECT FOR CARDS ---
-    const cards = document.querySelectorAll('.project-card');
-
-    cards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            // Reduced intensity to prevent visual jitter
-            const rotateX = ((y - centerY) / centerY) * -5; 
-            const rotateY = ((x - centerX) / centerX) * 5;
-
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-        });
-
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale(1)`;
-        });
-    });
-
+  });
 });

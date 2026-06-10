@@ -1141,34 +1141,70 @@ body.scroll-locked {
    ======================================== */
 @media (max-width: 1024px) and (min-width: 768px) {
   .hero {
-    min-height: 115vh;
-    align-items: flex-end;
+    min-height: 140vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Video: restrict height to 100vh of viewport to avoid extreme scaling and keep face clear */
+  .hero-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    overflow: hidden;
   }
 
   .hero-video-bg video {
-    object-position: center 15%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 8%;
+    transform: scale(1.05);
   }
 
   /* Strong bottom gradient — face visible top, text readable bottom */
   .hero-video-overlay {
+    position: absolute;
+    inset: 0;
     background:
       linear-gradient(180deg,
         transparent 0%,
-        hsla(220, 25%, 4%, 0.05) 20%,
-        hsla(220, 25%, 4%, 0.35) 38%,
-        hsla(220, 25%, 4%, 0.75) 50%,
-        hsla(220, 25%, 4%, 0.95) 62%,
-        hsl(220, 25%, 4%) 72%,
+        hsla(220, 25%, 4%, 0.0) 25%,
+        hsla(220, 25%, 4%, 0.15) 45%,
+        hsla(220, 25%, 4%, 0.6) 65%,
+        hsla(220, 25%, 4%, 0.95) 82%,
+        hsl(220, 25%, 4%) 95%,
         hsl(220, 25%, 4%) 100%);
   }
 
   .hero-content {
-    padding: 0 2.5rem 4rem;
+    position: relative;
+    padding: 0 2.5rem 5rem;
     margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    z-index: 4;
   }
 
   .hero-text {
-    max-width: 100%;
+    width: 95%;
+    max-width: 480px;
+    background: hsla(220, 25%, 6%, 0.72);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsla(220, 20%, 30%, 0.3);
+    border-radius: 24px;
+    padding: 2.25rem 1.75rem;
+    margin-top: 105vh;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   }
 
   .hero-intro-badge {
@@ -1222,10 +1258,12 @@ body.scroll-locked {
   }
 
   .hero-sound-toggle {
-    bottom: 1.5rem;
-    right: 1.5rem;
+    bottom: auto;
+    top: calc(100vh - 4.5rem);
+    right: 2.5rem;
     width: 48px;
     height: 48px;
+    z-index: 15;
   }
 }
 

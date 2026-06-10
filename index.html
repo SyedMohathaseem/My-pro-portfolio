@@ -283,31 +283,43 @@ JavaScript developer portfolio. UI UX designer India. Web app developer.
               />
               <div class="about-details">
                 <h3>SYED MOHATHASEEM</h3>
-                <p class="about-role"> Senior Front-end Developer</p>
+                <p class="about-role"> Full Stack Developer & Software Builder</p>
                 <!-- <p class="about-location">San Francisco, CA</p> -->
               </div>
             </div>
 
             <div class="about-text">
               <p>
-                a passionate Front-End Web Developer student with a strong interest in creating clean, responsive, and user-friendly websites. I enjoy turning creative ideas into interactive digital experiences using HTML, CSS, JavaScript, and modern frameworks.
+                I am a Full Stack Developer focused on building modern web applications and scalable digital solutions for startups and businesses.
               </p>
 
               <p>
-                I believe design and functionality go hand in hand — a great website should not only look beautiful but also provide a smooth and engaging user journey. Currently, I’m sharpening my skills in React, Tailwind CSS, and responsive design, while constantly exploring new technologies to stay ahead in the fast-paced web development world.
+                I have worked on startup websites, e-commerce platforms, HRM systems, and custom business software, helping turn ideas into fast, modern, and user-friendly digital products.
               </p>
 
-              <p>💡 I’m eager to collaborate on exciting projects, learn from real-world challenges, and contribute to building impactful digital solutions.
+              <p>
+                My focus is on creating responsive, performance-driven, and visually engaging web experiences that solve real-world problems. I enjoy building scalable systems, improving user experience, and developing impactful solutions using modern technologies.
+              </p>
 
-              When I’m not coding, you’ll find me exploring design trends, improving UI/UX prototypes, or learning new tools that push my creativity further.
+              <p>
+                I specialize in:<br>
+                &bull; Full Stack Web Development<br>
+                &bull; E-commerce Solutions<br>
+                &bull; HRM & Business Systems<br>
+                &bull; Startup MVP Development<br>
+                &bull; AI-Powered Web Applications
+              </p>
+
+              <p>
+                I believe great software is not only about design — it should also deliver performance, usability, and real business value.
               </p>
             </div>
 
             <div class="tech-tags">
-              <span class="tech-tag">Web developer</span>
+              <span class="tech-tag">Full Stack Developer</span>
               <span class="tech-tag">Problem Solver</span>
-              <span class="tech-tag">Technical Minding</span>
-              <span class="tech-tag">Lifelong Learner</span>
+              <span class="tech-tag">Startup Builder</span>
+              <span class="tech-tag">Business Solutions</span>
             </div>
           </div>
 
@@ -2149,8 +2161,8 @@ JavaScript developer portfolio. UI UX designer India. Web app developer.
       // ===== CV DOWNLOAD =====
       window.downloadCV = function() {
         const link = document.createElement('a');
-        link.href = 'assets/Mohathaseem-CV.pdf';
-        link.download = 'Syed-Mohathaseem-CV.pdf';
+        link.href = 'assets/Syed_Mohathaseem_CV.pdf';
+        link.download = 'Syed_Mohathaseem_CV.pdf';
         link.click();
       };
 
@@ -2174,38 +2186,47 @@ JavaScript developer portfolio. UI UX designer India. Web app developer.
       // ===== SCROLL LOCK UNTIL VIDEO ENDS =====
       const heroVid = document.getElementById('heroVideo');
       if (heroVid) {
-        // Lock scrolling
-        document.body.classList.add('scroll-locked');
+        // Check if intro has already played in this browser session
+        const hasSeenIntro = sessionStorage.getItem('hasSeenIntro');
 
-        function unlockAndScroll() {
-          if (!document.body.classList.contains('scroll-locked')) return;
-          document.body.classList.remove('scroll-locked');
-          // Smooth scroll to about section after a brief pause
+        if (!hasSeenIntro) {
+          // First time visitor in this session: lock scroll and play intro
+          document.body.classList.add('scroll-locked');
+
+          function unlockAndScroll() {
+            if (!document.body.classList.contains('scroll-locked')) return;
+            document.body.classList.remove('scroll-locked');
+            sessionStorage.setItem('hasSeenIntro', 'true'); // mark as seen
+            // Smooth scroll to about section after a brief pause
+            setTimeout(() => {
+              const aboutSection = document.getElementById('about');
+              if (aboutSection) {
+                aboutSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }, 400);
+          }
+
+          // When video completes first play
+          heroVid.addEventListener('ended', function onFirstEnd() {
+            heroVid.removeEventListener('ended', onFirstEnd);
+            unlockAndScroll();
+            // Restart loop after scrolling
+            heroVid.loop = true;
+            heroVid.play().catch(() => {});
+          });
+
+          // Remove loop so 'ended' fires on first play
+          heroVid.loop = false;
+
+          // Failsafe: unlock after 15 seconds if video hasn't ended
           setTimeout(() => {
-            const aboutSection = document.getElementById('about');
-            if (aboutSection) {
-              aboutSection.scrollIntoView({ behavior: 'smooth' });
-            }
-          }, 400);
+            unlockAndScroll();
+            heroVid.loop = true;
+          }, 15000);
+        } else {
+          // Already seen intro: loop normally without locking scroll
+          heroVid.loop = true;
         }
-
-        // When video completes first play
-        heroVid.addEventListener('ended', function onFirstEnd() {
-          heroVid.removeEventListener('ended', onFirstEnd);
-          unlockAndScroll();
-          // Restart loop after scrolling
-          heroVid.loop = true;
-          heroVid.play().catch(() => {});
-        });
-
-        // Remove loop so 'ended' fires on first play
-        heroVid.loop = false;
-
-        // Failsafe: unlock after 15 seconds if video hasn't ended
-        setTimeout(() => {
-          unlockAndScroll();
-          heroVid.loop = true;
-        }, 15000);
       }
 
       // ===== CONTACT FORM =====
@@ -2374,6 +2395,8 @@ JavaScript developer portfolio. UI UX designer India. Web app developer.
               iconOff.style.display = 'none';
               iconOn.style.display = '';
             }
+            // Fix for iOS/mobile: explicitly play after unmuting to prevent pausing
+            heroVideo.play().catch(() => {});
           }
           // Clean up interaction listeners after unmuting
           ['click', 'touchstart', 'scroll', 'keydown'].forEach(event => {
@@ -2396,6 +2419,8 @@ JavaScript developer portfolio. UI UX designer India. Web app developer.
             soundBtn.classList.add('unmuted');
             iconOff.style.display = 'none';
             iconOn.style.display = '';
+            // Fix for iOS/mobile: explicitly play after unmuting to prevent pausing
+            heroVideo.play().catch(() => {});
           }
         });
       }

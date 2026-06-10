@@ -5,12 +5,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    135deg,
-    hsl(240, 100%, 15%),
-    hsl(280, 100%, 20%),
-    hsl(220, 100%, 10%)
-  );
+  background: linear-gradient(135deg,
+      hsl(240, 100%, 15%),
+      hsl(280, 100%, 20%),
+      hsl(220, 100%, 10%));
   z-index: 10000;
   display: flex;
   align-items: center;
@@ -99,12 +97,10 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent);
   transition: left 0.5s ease;
 }
 
@@ -122,11 +118,9 @@
   .welcome-btn:active {
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 8px 30px hsl(270, 100%, 60%, 0.7);
-    background: linear-gradient(
-      135deg,
-      hsl(270, 100%, 65%),
-      hsl(320, 100%, 60%)
-    );
+    background: linear-gradient(135deg,
+        hsl(270, 100%, 65%),
+        hsl(320, 100%, 60%));
   }
 
   .welcome-btn:active::before {
@@ -137,59 +131,47 @@
   .btn-hero:active {
     transform: translateY(-2px) scale(1.02);
     box-shadow: 0 10px 40px hsl(270, 100%, 60%, 0.5);
-    background: linear-gradient(
-      135deg,
-      hsl(270, 100%, 65%),
-      hsl(320, 100%, 60%)
-    );
+    background: linear-gradient(135deg,
+        hsl(270, 100%, 65%),
+        hsl(320, 100%, 60%));
   }
 
   .btn-outline:active {
-    background: linear-gradient(
-      135deg,
-      hsl(270, 100%, 60%),
-      hsl(320, 100%, 65%)
-    );
+    background: linear-gradient(135deg,
+        hsl(270, 100%, 60%),
+        hsl(320, 100%, 65%));
     color: white;
     border-color: transparent;
     box-shadow: 0 8px 25px hsl(270, 100%, 60%, 0.4);
   }
 
   .btn-ghost:active {
-    background: linear-gradient(
-      135deg,
-      hsl(270, 100%, 60%, 0.15),
-      hsl(320, 100%, 65%, 0.15)
-    );
+    background: linear-gradient(135deg,
+        hsl(270, 100%, 60%, 0.15),
+        hsl(320, 100%, 65%, 0.15));
     color: hsl(270, 100%, 70%);
   }
 
   /* Navigation link hover effects for mobile */
   .nav-link:active {
-    background: linear-gradient(
-      135deg,
-      hsl(270, 100%, 60%),
-      hsl(320, 100%, 65%)
-    );
+    background: linear-gradient(135deg,
+        hsl(270, 100%, 60%),
+        hsl(320, 100%, 65%));
     color: white;
     box-shadow: 0 4px 15px hsl(270, 100%, 60%, 0.4);
   }
 
   .theme-toggle:active {
-    background: linear-gradient(
-      135deg,
-      hsl(270, 100%, 60%, 0.2),
-      hsl(320, 100%, 65%, 0.2)
-    );
+    background: linear-gradient(135deg,
+        hsl(270, 100%, 60%, 0.2),
+        hsl(320, 100%, 65%, 0.2));
     color: hsl(270, 100%, 70%);
   }
 
   .mobile-nav-link:active {
-    background: linear-gradient(
-      135deg,
-      hsl(270, 100%, 60%),
-      hsl(320, 100%, 65%)
-    );
+    background: linear-gradient(135deg,
+        hsl(270, 100%, 60%),
+        hsl(320, 100%, 65%));
     color: white;
   }
 
@@ -217,11 +199,9 @@
 
   .contact-item:active .contact-icon {
     transform: scale(1.15);
-    background: linear-gradient(
-      135deg,
-      hsl(270, 100%, 60%),
-      hsl(320, 100%, 65%)
-    );
+    background: linear-gradient(135deg,
+        hsl(270, 100%, 60%),
+        hsl(320, 100%, 65%));
     box-shadow: 0 8px 20px hsl(270, 100%, 60%, 0.4);
   }
 
@@ -232,11 +212,9 @@
   /* Social link hover effects for mobile */
   .social-link:active {
     transform: scale(1.15);
-    background: linear-gradient(
-      135deg,
-      hsl(270, 100%, 60%),
-      hsl(320, 100%, 65%)
-    );
+    background: linear-gradient(135deg,
+        hsl(270, 100%, 60%),
+        hsl(320, 100%, 65%));
     color: white;
     border-color: transparent;
     box-shadow: 0 8px 25px hsl(270, 100%, 60%, 0.5);
@@ -246,11 +224,9 @@
   .scroll-to-top:active {
     transform: scale(1.1);
     box-shadow: 0 15px 35px hsl(270, 100%, 60%, 0.5);
-    background: linear-gradient(
-      135deg,
-      hsl(270, 100%, 60%),
-      hsl(320, 100%, 65%)
-    );
+    background: linear-gradient(135deg,
+        hsl(270, 100%, 60%),
+        hsl(320, 100%, 65%));
   }
 
   /* Expertise card hover effects for mobile */
@@ -261,21 +237,17 @@
   }
 
   .expertise-card:active .expertise-icon {
-    background: linear-gradient(
-      135deg,
-      hsl(270, 100%, 60%),
-      hsl(320, 100%, 65%)
-    );
+    background: linear-gradient(135deg,
+        hsl(270, 100%, 60%),
+        hsl(320, 100%, 65%));
     box-shadow: 0 8px 20px hsl(270, 100%, 60%, 0.4);
   }
 
   /* Tech tag hover effects for mobile */
   .tech-tag:active {
-    background: linear-gradient(
-      135deg,
-      hsl(270, 100%, 60%),
-      hsl(320, 100%, 65%)
-    );
+    background: linear-gradient(135deg,
+        hsl(270, 100%, 60%),
+        hsl(320, 100%, 65%));
     color: white;
     border-color: transparent;
     transform: scale(1.05);
@@ -295,11 +267,13 @@
 }
 
 @keyframes welcomePulse {
+
   0%,
   100% {
     transform: scale(1);
     box-shadow: 0 0 40px hsl(240, 100%, 60%, 0.5);
   }
+
   50% {
     transform: scale(1.05);
     box-shadow: 0 0 60px hsl(280, 100%, 65%, 0.6);
@@ -311,6 +285,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -369,6 +344,7 @@ body.hovering .cursor-outline {
 
 /* Hide custom cursor on touch devices */
 @media (hover: none) and (pointer: coarse) {
+
   .cursor-dot,
   .cursor-outline {
     display: none;
@@ -404,26 +380,18 @@ body.hovering .cursor-outline {
   --destructive-foreground: hsl(0, 0%, 100%);
 
   /* Gradients */
-  --gradient-primary: linear-gradient(
-    135deg,
-    hsl(240, 100%, 60%),
-    hsl(280, 100%, 65%)
-  );
-  --gradient-secondary: linear-gradient(
-    135deg,
-    hsl(280, 100%, 65%),
-    hsl(320, 100%, 70%)
-  );
-  --gradient-hero: linear-gradient(
-    135deg,
-    hsl(240, 100%, 60%, 0.1),
-    hsl(280, 100%, 65%, 0.1)
-  );
-  --gradient-card: linear-gradient(
-    145deg,
-    hsl(0, 0%, 100%),
-    hsl(220, 20%, 97%)
-  );
+  --gradient-primary: linear-gradient(135deg,
+      hsl(240, 100%, 60%),
+      hsl(280, 100%, 65%));
+  --gradient-secondary: linear-gradient(135deg,
+      hsl(280, 100%, 65%),
+      hsl(320, 100%, 70%));
+  --gradient-hero: linear-gradient(135deg,
+      hsl(240, 100%, 60%, 0.1),
+      hsl(280, 100%, 65%, 0.1));
+  --gradient-card: linear-gradient(145deg,
+      hsl(0, 0%, 100%),
+      hsl(220, 20%, 97%));
 
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 hsl(0, 0%, 0%, 0.05);
@@ -460,26 +428,18 @@ body.hovering .cursor-outline {
   --input: hsl(220, 25%, 16%);
   --ring: hsl(240, 100%, 65%);
 
-  --gradient-primary: linear-gradient(
-    135deg,
-    hsl(240, 100%, 65%),
-    hsl(280, 100%, 70%)
-  );
-  --gradient-secondary: linear-gradient(
-    135deg,
-    hsl(280, 100%, 70%),
-    hsl(320, 100%, 75%)
-  );
-  --gradient-hero: linear-gradient(
-    135deg,
-    hsl(240, 100%, 65%, 0.1),
-    hsl(280, 100%, 70%, 0.1)
-  );
-  --gradient-card: linear-gradient(
-    145deg,
-    hsl(220, 25%, 8%),
-    hsl(220, 25%, 10%)
-  );
+  --gradient-primary: linear-gradient(135deg,
+      hsl(240, 100%, 65%),
+      hsl(280, 100%, 70%));
+  --gradient-secondary: linear-gradient(135deg,
+      hsl(280, 100%, 70%),
+      hsl(320, 100%, 75%));
+  --gradient-hero: linear-gradient(135deg,
+      hsl(240, 100%, 65%, 0.1),
+      hsl(280, 100%, 70%, 0.1));
+  --gradient-card: linear-gradient(145deg,
+      hsl(220, 25%, 8%),
+      hsl(220, 25%, 10%));
 
   --shadow-sm: 0 1px 2px 0 hsl(0, 0%, 0%, 0.3);
   --shadow-md:
@@ -609,17 +569,33 @@ h6 {
   border: 1px solid var(--border);
 }
 
-/* Navigation */
+/* Navigation — Apple iOS Glassmorphism */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 50;
-  background: var(--card);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  transition: all 0.3s ease;
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  border-bottom: 1px solid hsla(220, 20%, 40%, 0.15);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* When scrolled past hero — solid glassmorphic */
+.navbar.scrolled {
+  background: hsla(220, 25%, 6%, 0.8);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom-color: hsla(220, 20%, 30%, 0.35);
+  box-shadow: 0 8px 32px hsla(0, 0%, 0%, 0.3);
+}
+
+/* Scroll lock for hero video intro */
+body.scroll-locked {
+  overflow: hidden !important;
+  height: 100vh !important;
 }
 
 .nav-content {
@@ -633,6 +609,7 @@ h6 {
 .nav-logo {
   font-size: 1.25rem;
   font-weight: 700;
+  color: #fff;
 }
 
 .nav-links {
@@ -641,35 +618,39 @@ h6 {
 }
 
 .nav-link {
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.5rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 100px;
   text-decoration: none;
-  color: var(--muted-foreground);
+  color: hsla(220, 15%, 75%, 0.85);
   transition: all 0.3s ease;
   font-weight: 500;
+  font-size: 0.9rem;
 }
 
-.nav-link:hover,
+.nav-link:hover {
+  color: #ffffff;
+  background: hsla(220, 20%, 50%, 0.15);
+}
+
 .nav-link.active {
   color: #ffffff !important;
   background: var(--primary);
-  transform: translateY(-1px);
 }
 
 .theme-toggle {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 0.5rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
   border: none;
   background: transparent;
-  color: var(--muted-foreground);
+  color: hsla(220, 15%, 75%, 0.85);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .theme-toggle:hover {
-  background: var(--accent);
-  color: var(--accent-foreground);
+  background: hsla(220, 20%, 50%, 0.15);
+  color: #fff;
 }
 
 .mobile-menu-btn {
@@ -684,9 +665,11 @@ h6 {
 
 .mobile-menu {
   display: none;
-  padding: 1rem;
-  border-top: 1px solid var(--border);
-  background: var(--card);
+  padding: 0.75rem 1rem;
+  border-top: 1px solid hsla(220, 20%, 30%, 0.2);
+  background: hsla(220, 25%, 6%, 0.85);
+  -webkit-backdrop-filter: saturate(180%) blur(24px);
+  backdrop-filter: saturate(180%) blur(24px);
 }
 
 .mobile-menu.active {
@@ -695,204 +678,748 @@ h6 {
 
 .mobile-nav-link {
   display: block;
-  padding: 0.75rem;
-  color: var(--muted-foreground);
+  padding: 0.75rem 1rem;
+  color: hsla(220, 15%, 75%, 0.85);
   text-decoration: none;
-  border-radius: 0.5rem;
+  border-radius: 12px;
   transition: all 0.3s ease;
+  font-size: 0.95rem;
 }
 
-.mobile-nav-link:hover,
+.mobile-nav-link:hover {
+  color: #fff;
+  background: hsla(220, 20%, 50%, 0.12);
+}
+
 .mobile-nav-link.active {
   color: #ffffff !important;
   background: var(--primary);
-  padding-left: 1.25rem;
 }
 
-/* Hero Section */
+/* ========================================
+   HERO SECTION — Full-Screen Video Background
+   ======================================== */
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: var(--gradient-hero);
-  padding: 5rem 0;
   position: relative;
   overflow: hidden;
+  background: hsl(220, 25%, 4%);
+  padding: 0;
 }
 
-.hero::before {
-  content: "";
+/* --- Floating Particles Canvas --- */
+.hero-particles {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  opacity: 0.05;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
 }
 
-.hero-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-  position: relative;
+/* --- Full-Screen Video Background --- */
+.hero-video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Gradient overlay: dark left → transparent right (reveals person in video) */
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg,
+      hsl(220, 25%, 4%) 0%,
+      hsla(220, 25%, 4%, 0.95) 30%,
+      hsla(220, 25%, 4%, 0.82) 42%,
+      hsla(225, 30%, 6%, 0.45) 60%,
+      hsla(225, 30%, 6%, 0.15) 80%,
+      hsla(225, 30%, 6%, 0.08) 100%),
+    linear-gradient(180deg,
+      hsla(220, 25%, 4%, 0.5) 0%,
+      transparent 20%,
+      transparent 80%,
+      hsla(220, 25%, 4%, 0.6) 100%);
   z-index: 1;
 }
 
+/* --- Hero Content (Overlaid on Video) --- */
+.hero-content {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 7rem 2rem 3rem;
+}
+
 .hero-text {
-  text-align: center;
+  max-width: 480px;
+  animation: heroFadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
 }
 
-.hero-title {
-  font-size: clamp(2rem, 8vw, 2.5rem);
-  font-weight: 800;
+/* --- Intro Badge --- */
+.hero-intro-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: hsl(45, 100%, 72%);
   margin-bottom: 1rem;
-  line-height: 1.1;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  letter-spacing: 0.02em;
+  animation: heroFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+  opacity: 0;
 }
 
-.hero-subtitle {
-  font-size: clamp(1rem, 5vw, 1.25rem);
-  color: var(--muted-foreground);
-  margin-bottom: 1.5rem;
+.hero-intro-wave {
+  display: inline-block;
+  animation: waveHand 2.5s ease-in-out infinite;
+  transform-origin: 70% 70%;
+  font-size: 1.2em;
 }
 
+@keyframes waveHand {
+
+  0%,
+  60%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  10% {
+    transform: rotate(14deg);
+  }
+
+  20% {
+    transform: rotate(-8deg);
+  }
+
+  30% {
+    transform: rotate(14deg);
+  }
+
+  40% {
+    transform: rotate(-4deg);
+  }
+
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+/* --- Hero Title --- */
+.hero-title {
+  font-size: clamp(2.5rem, 7vw, 4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+  animation: heroFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+  opacity: 0;
+}
+
+.hero-name-white {
+  display: block;
+  color: #ffffff;
+}
+
+.hero-title .hero-text-gradient {
+  display: block;
+}
+
+/* --- Hero Role --- */
+.hero-role {
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  animation: heroFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+  opacity: 0;
+}
+
+.hero-role-amp {
+  color: hsl(220, 15%, 80%);
+  font-weight: 500;
+}
+
+/* --- Hero Description --- */
 .hero-description {
-  font-size: clamp(0.875rem, 4vw, 1rem);
-  color: var(--muted-foreground);
-  margin-bottom: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
+  font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+  color: hsl(220, 15%, 65%);
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+  line-height: 1.7;
+  animation: heroFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+  opacity: 0;
 }
 
+/* --- Trust Line --- */
+.hero-trust-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+  animation: heroFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+  opacity: 0;
+}
+
+.hero-trust-item {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: hsl(220, 15%, 70%);
+  letter-spacing: 0.02em;
+}
+
+.hero-trust-dot {
+  width: 5px;
+  height: 5px;
+  background: hsl(280, 100%, 65%);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* --- Hero Buttons --- */
 .hero-buttons {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  justify-content: center;
   margin-bottom: 2rem;
+  animation: heroFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+  opacity: 0;
 }
 
+.hero-buttons .btn-hero {
+  padding: 0.9rem 1.75rem;
+  font-size: 0.95rem;
+  border-radius: 50px;
+  background: var(--gradient-primary);
+  color: white;
+  box-shadow:
+    0 0 25px hsla(240, 100%, 60%, 0.35),
+    0 4px 15px hsla(240, 100%, 60%, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-buttons .btn-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, hsla(0, 0%, 100%, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.hero-buttons .btn-hero:hover::before {
+  left: 100%;
+}
+
+.hero-buttons .btn-hero:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 40px hsla(240, 100%, 60%, 0.5),
+    0 8px 25px hsla(240, 100%, 60%, 0.3);
+}
+
+.hero-buttons .btn-outline {
+  padding: 0.9rem 1.75rem;
+  font-size: 0.95rem;
+  border-radius: 50px;
+  border: 1.5px solid hsla(240, 100%, 65%, 0.5);
+  color: hsl(240, 80%, 85%);
+  background: hsla(240, 100%, 60%, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.hero-buttons .btn-outline:hover {
+  background: hsla(240, 100%, 60%, 0.18);
+  border-color: hsla(240, 100%, 65%, 0.8);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px hsla(240, 100%, 60%, 0.25);
+}
+
+/* --- Hero Social Links --- */
 .hero-social {
   display: flex;
-  gap: 1rem;
-  justify-content: center;
+  gap: 0.75rem;
+  animation: heroFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards;
+  opacity: 0;
 }
 
-/* Desktop layout - 768px and above */
-@media (min-width: 768px) {
-  .hero-content {
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    text-align: left;
-  }
-
-  .hero-text {
-    text-align: left;
-    order: 1;
-  }
-
-  .hero-image {
-    order: 2;
-  }
-
-  .hero-title {
-    font-size: 3rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.5rem;
-  }
-
-  .hero-description {
-    font-size: 1.125rem;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .hero-buttons {
-    justify-content: flex-start;
-  }
-
-  .hero-social {
-    justify-content: flex-start;
-  }
-}
-
-/* Large desktop - 1024px and above */
-@media (min-width: 1024px) {
-  .hero-title {
-    font-size: 3.5rem;
-  }
-
-  .hero-content {
-    gap: 5rem;
-  }
-}
-
-.hero-image {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  margin-top: 1rem;
-}
-
-.profile-image {
-  width: clamp(200px, 60vw, 300px);
-  height: clamp(200px, 60vw, 300px);
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid var(--primary);
-  box-shadow: var(--shadow-hero);
-  position: relative;
-  z-index: 2;
-}
-
-.profile-glow {
-  position: absolute;
-  inset: 0;
-  background: var(--gradient-primary);
-  border-radius: 50%;
-  filter: blur(40px);
-  opacity: 0.3;
-  animation: pulse-glow 2s ease-in-out infinite;
-}
-
-.profile-emoji {
-  position: absolute;
-  bottom: -1rem;
-  right: -1rem;
-  width: 4rem;
-  height: 4rem;
-  background: var(--gradient-primary);
-  border-radius: 50%;
-  display: flex;
+.hero-social-link {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  box-shadow: var(--shadow-lg);
-  animation: float 3s ease-in-out infinite;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: hsla(220, 20%, 20%, 0.5);
+  border: 1px solid hsla(220, 20%, 30%, 0.5);
+  color: hsl(220, 15%, 70%);
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Typing Effect */
-.typing-text {
-  border-right: 2px solid var(--primary);
-  animation: blink 0.75s step-end infinite;
+.hero-social-link:hover {
+  background: hsla(240, 100%, 60%, 0.2);
+  border-color: hsla(240, 100%, 65%, 0.5);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px hsla(240, 100%, 60%, 0.2);
 }
 
-/* Scroll Indicator */
+/* --- Scroll Indicator --- */
 .scroll-indicator {
   position: absolute;
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
-  animation: bounce 2s infinite;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  animation: heroFadeInUp 0.8s ease 1.2s forwards;
+  opacity: 0;
 }
+
+.scroll-indicator-text {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: hsl(220, 15%, 50%);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.scroll-indicator-btn {
+  background: none;
+  border: none;
+  color: hsl(220, 15%, 50%);
+  cursor: pointer;
+  padding: 0.25rem;
+  transition: color 0.3s ease;
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+.scroll-indicator-btn:hover {
+  color: hsl(240, 80%, 80%);
+}
+
+@keyframes scrollBounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+/* --- Hero Animations --- */
+@keyframes heroFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Sound Toggle Button (covers watermark) --- */
+.hero-sound-toggle {
+  position: absolute;
+  bottom: 4.5rem;
+  right: 6.8rem;
+  left: auto;
+  z-index: 10;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1.5px solid hsla(240, 60%, 50%, 0.35);
+  background: hsl(220, 25%, 7%);
+  color: hsl(220, 15%, 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+
+.hero-sound-toggle:hover {
+  background: hsla(240, 60%, 12%, 1);
+  border-color: hsla(240, 100%, 65%, 0.6);
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 0 25px hsla(240, 100%, 60%, 0.25);
+}
+
+.hero-sound-toggle.unmuted {
+  border-color: hsla(240, 100%, 65%, 0.6);
+  color: hsl(240, 80%, 80%);
+  background: hsl(240, 40%, 12%);
+  box-shadow: 0 0 20px hsla(240, 100%, 60%, 0.2);
+}
+
+/* ========================================
+   HERO RESPONSIVE
+   ======================================== */
+
+/* --- Desktop 768px+ --- */
+@media (min-width: 768px) {
+  .hero-content {
+    padding: 0 3rem;
+  }
+
+  .hero-text {
+    max-width: 480px;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+
+/* --- Desktop 1024px+ --- */
+@media (min-width: 1024px) {
+  .hero-content {
+    padding: 0 4rem;
+  }
+
+  .hero-text {
+    max-width: 520px;
+  }
+
+  .hero-title {
+    font-size: 4.2rem;
+  }
+}
+
+/* --- Large Desktop 1440px+ --- */
+@media (min-width: 1440px) {
+  .hero-content {
+    max-width: 1400px;
+    padding: 0 5rem;
+  }
+
+  .hero-title {
+    font-size: 4.5rem;
+  }
+}
+
+/* ========================================
+   TABLET (768px - 1024px)
+   Premium cinematic — face at top, text at bottom-left
+   ======================================== */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .hero {
+    min-height: 115vh;
+    align-items: flex-end;
+  }
+
+  .hero-video-bg video {
+    object-position: center 15%;
+  }
+
+  /* Strong bottom gradient — face visible top, text readable bottom */
+  .hero-video-overlay {
+    background:
+      linear-gradient(180deg,
+        transparent 0%,
+        hsla(220, 25%, 4%, 0.05) 20%,
+        hsla(220, 25%, 4%, 0.35) 38%,
+        hsla(220, 25%, 4%, 0.75) 50%,
+        hsla(220, 25%, 4%, 0.95) 62%,
+        hsl(220, 25%, 4%) 72%,
+        hsl(220, 25%, 4%) 100%);
+  }
+
+  .hero-content {
+    padding: 0 2.5rem 4rem;
+    margin-top: auto;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-intro-badge {
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-title {
+    font-size: 3.2rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .hero-role {
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+    max-width: 90%;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-trust-line {
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-trust-item {
+    font-size: 0.8rem;
+  }
+
+  .hero-buttons {
+    gap: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-buttons .btn-hero,
+  .hero-buttons .btn-outline {
+    padding: 0.85rem 1.6rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-social-link {
+    width: 42px;
+    height: 42px;
+  }
+
+  .scroll-indicator {
+    bottom: 1rem;
+  }
+
+  .hero-sound-toggle {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* ========================================
+   MOBILE (320px - 767px)
+   Premium cinematic — face upper area, glassmorphic content card below
+   ======================================== */
+@media (max-width: 767px) {
+  .hero {
+    min-height: 145vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Video: restrict height to 100vh of viewport to avoid extreme scaling */
+  .hero-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .hero-video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 3%;
+    transform: scale(1.04);
+  }
+
+  /* Cinematic vertical gradient over the 100vh video background */
+  .hero-video-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg,
+        transparent 0%,
+        hsla(220, 25%, 4%, 0.0) 25%,
+        hsla(220, 25%, 4%, 0.15) 45%,
+        hsla(220, 25%, 4%, 0.6) 65%,
+        hsla(220, 25%, 4%, 0.95) 82%,
+        hsl(220, 25%, 4%) 95%,
+        hsl(220, 25%, 4%) 100%);
+  }
+
+  .hero-particles {
+    display: none;
+  }
+
+  /* Content area — positioned near bottom third of the screen */
+  .hero-content {
+    position: relative;
+    padding: 0 0 4rem 0;
+    margin-top: auto;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 4;
+  }
+
+  /* Glassmorphic content card */
+  .hero-text {
+    width: 95%;
+    max-width: 480px;
+    background: hsla(220, 25%, 6%, 0.72);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsla(220, 20%, 30%, 0.3);
+    border-radius: 24px;
+    padding: 2.25rem 1.75rem;
+    margin-top: 100vh;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-intro-badge {
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+    color: hsl(45, 100%, 72%);
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+    margin-bottom: 0.35rem;
+    line-height: 1.1;
+  }
+
+  .hero-name-white {
+    font-size: 0.95em;
+  }
+
+  .hero-role {
+    font-size: 0.9rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .hero-description {
+    font-size: 0.82rem;
+    max-width: 100%;
+    line-height: 1.5;
+    margin-bottom: 0.9rem;
+    color: hsl(220, 15%, 60%);
+  }
+
+  /* Trust items — 2-column grid */
+  .hero-trust-line {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.35rem 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-trust-item {
+    font-size: 0.72rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: hsl(220, 15%, 60%);
+  }
+
+  .hero-trust-item::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: hsl(280, 100%, 65%);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .hero-trust-dot {
+    display: none;
+  }
+
+  /* Buttons — full width, stacked with better spacing */
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-buttons .btn-hero,
+  .hero-buttons .btn-outline {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.85rem 1.25rem;
+    font-size: 0.9rem;
+    border-radius: 14px;
+  }
+
+  .hero-buttons .btn-hero {
+    box-shadow:
+      0 0 20px hsla(240, 100%, 60%, 0.3),
+      0 4px 12px hsla(240, 100%, 60%, 0.15);
+  }
+
+  /* Social icons */
+  .hero-social {
+    gap: 0.5rem;
+    justify-content: flex-start;
+  }
+
+  .hero-social-link {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+  }
+
+  /* Hide scroll indicator on mobile */
+  .scroll-indicator {
+    display: none;
+  }
+
+  /* Position sound toggle over the bottom right of the 100vh video background */
+  .hero-sound-toggle {
+    bottom: auto;
+    top: calc(100vh - 4.5rem);
+    right: 1.5rem;
+    width: 44px;
+    height: 44px;
+    z-index: 15;
+  }
+}
+
+
 
 /* Section Styles */
 .section {
@@ -1373,6 +1900,7 @@ h6 {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1384,6 +1912,7 @@ h6 {
     opacity: 0;
     transform: translateX(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -1395,6 +1924,7 @@ h6 {
     opacity: 0;
     transform: translateX(30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -1402,6 +1932,7 @@ h6 {
 }
 
 @keyframes bounce {
+
   0%,
   20%,
   53%,
@@ -1409,13 +1940,16 @@ h6 {
   100% {
     transform: translate3d(0, 0, 0);
   }
+
   40%,
   43% {
     transform: translate3d(0, -30px, 0);
   }
+
   70% {
     transform: translate3d(0, -15px, 0);
   }
+
   90% {
     transform: translate3d(0, -4px, 0);
   }
@@ -1428,20 +1962,24 @@ h6 {
 }
 
 @keyframes pulse-glow {
+
   0%,
   100% {
     opacity: 0.3;
   }
+
   50% {
     opacity: 0.6;
   }
 }
 
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -1462,15 +2000,19 @@ h6 {
 .stagger-delay-1 {
   animation-delay: 0.1s;
 }
+
 .stagger-delay-2 {
   animation-delay: 0.2s;
 }
+
 .stagger-delay-3 {
   animation-delay: 0.3s;
 }
+
 .stagger-delay-4 {
   animation-delay: 0.4s;
 }
+
 .stagger-delay-5 {
   animation-delay: 0.5s;
 }
@@ -1485,28 +2027,6 @@ h6 {
     display: none;
   }
 
-  .hero-content {
-    grid-template-columns: 1fr 1fr;
-    text-align: left;
-  }
-
-  .hero-text {
-    text-align: left;
-    margin-left: 90px;
-  }
-
-  .hero-buttons {
-    justify-content: flex-start;
-  }
-
-  .hero-social {
-    justify-content: flex-start;
-  }
-
-  .hero-title {
-    font-size: 4rem;
-  }
-
   .about-content {
     grid-template-columns: 1fr 1fr;
   }
@@ -1518,15 +2038,6 @@ h6 {
 }
 
 @media (min-width: 1024px) {
-  .hero-title {
-    font-size: 5rem;
-  }
-
-  .profile-image {
-    width: 400px;
-    height: 400px;
-  }
-
   .expertise-grid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -1638,7 +2149,8 @@ h6 {
 
 /* --- 1. HIDE DEFAULT CURSOR & CURSOR STYLES --- */
 * {
-  cursor: none; /* Hides the standard mouse pointer */
+  cursor: none;
+  /* Hides the standard mouse pointer */
 }
 
 .cursor-dot {
@@ -1647,7 +2159,8 @@ h6 {
   left: 0;
   width: 8px;
   height: 8px;
-  background-color: #00f3ff; /* Your Primary Neon Color */
+  background-color: #00f3ff;
+  /* Your Primary Neon Color */
   border-radius: 50%;
   pointer-events: none;
   z-index: 100001;
@@ -1682,10 +2195,12 @@ body.hovering .cursor-outline {
 
 /* Hide custom cursor on mobile (touch devices) */
 @media (max-width: 768px) {
+
   .cursor-dot,
   .cursor-outline {
     display: none;
   }
+
   * {
     cursor: auto;
   }

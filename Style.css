@@ -465,12 +465,96 @@ html {
 
 body {
   font-family: "Inter", sans-serif;
-  background: var(--background);
+  background: hsl(220, 25%, 4%);
   color: var(--foreground);
   line-height: 1.6;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Modern developer grid background overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: 
+    linear-gradient(to right, hsla(220, 20%, 30%, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, hsla(220, 20%, 30%, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Global background particles canvas */
+.bg-particles {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1.5;
+  pointer-events: none;
+}
+
+/* Animated background glowing blobs */
+.bg-glow-blobs {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-glow-blobs .blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.12;
+  mix-blend-mode: screen;
+  animation: float-blob 25s infinite alternate ease-in-out;
+}
+
+.bg-glow-blobs .blob-1 {
+  top: -10%;
+  left: 10%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, hsl(240, 100%, 65%) 0%, transparent 70%);
+  animation-duration: 20s;
+}
+
+.bg-glow-blobs .blob-2 {
+  bottom: 15%;
+  right: 5%;
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, hsl(280, 100%, 70%) 0%, transparent 70%);
+  animation-duration: 28s;
+  animation-delay: -5s;
+}
+
+.bg-glow-blobs .blob-3 {
+  top: 45%;
+  left: 40%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, hsl(320, 100%, 75%) 0%, transparent 70%);
+  animation-duration: 24s;
+  animation-delay: -10s;
+}
+
+@keyframes float-blob {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  33% {
+    transform: translate(4vw, 8vh) scale(1.1) rotate(120deg);
+  }
+  66% {
+    transform: translate(-4vw, 12vh) scale(0.9) rotate(240deg);
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(360deg);
+  }
 }
 
 /* Container */
@@ -550,23 +634,46 @@ h6 {
 
 /* Card Styles */
 .card {
-  background: var(--gradient-card);
+  background: hsla(220, 25%, 8%, 0.65) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid hsla(220, 20%, 30%, 0.25) !important;
   border-radius: var(--radius);
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-card:hover {
   transform: translateY(-8px);
-  box-shadow: var(--shadow-xl);
+  box-shadow: 0 15px 35px hsla(240, 100%, 65%, 0.18);
+  border-color: hsla(240, 100%, 65%, 0.45) !important;
+}
+
+.expertise-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px hsla(280, 100%, 70%, 0.15);
+  border-color: hsla(280, 100%, 70%, 0.4) !important;
 }
 
 .glass-card {
-  background: var(--card);
+  background: hsla(220, 25%, 8%, 0.65) !important;
   backdrop-filter: blur(20px);
-  border: 1px solid var(--border);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid hsla(220, 20%, 30%, 0.25) !important;
+}
+
+/* About Section Card Paddings */
+.about-profile-card,
+.about-skills-card {
+  padding: 2.5rem 2.25rem !important;
+}
+
+@media (max-width: 767px) {
+  .about-profile-card,
+  .about-skills-card {
+    padding: 2rem 1.5rem !important;
+  }
 }
 
 /* Navigation — Apple iOS Glassmorphism */
@@ -1273,7 +1380,7 @@ body.scroll-locked {
    ======================================== */
 @media (max-width: 767px) {
   .hero {
-    min-height: 145vh;
+    min-height: 115vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -1282,13 +1389,13 @@ body.scroll-locked {
     overflow: hidden;
   }
 
-  /* Video: restrict height to 100vh of viewport to avoid extreme scaling */
+  /* Video: restrict height to 60vh of viewport to avoid extreme scaling and reduce zoom */
   .hero-video-bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 60vh;
     z-index: 0;
     overflow: hidden;
   }
@@ -1298,10 +1405,10 @@ body.scroll-locked {
     height: 100%;
     object-fit: cover;
     object-position: center 3%;
-    transform: scale(1.04);
+    transform: scale(1.0);
   }
 
-  /* Cinematic vertical gradient over the 100vh video background */
+  /* Cinematic vertical gradient over the 60vh video background */
   .hero-video-overlay {
     position: absolute;
     inset: 0;
@@ -1342,7 +1449,7 @@ body.scroll-locked {
     border: 1px solid hsla(220, 20%, 30%, 0.3);
     border-radius: 24px;
     padding: 2.25rem 1.75rem;
-    margin-top: 100vh;
+    margin-top: 60vh;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   }
 
@@ -1446,10 +1553,10 @@ body.scroll-locked {
     display: none;
   }
 
-  /* Position sound toggle over the bottom right of the 100vh video background */
+  /* Position sound toggle over the bottom right of the 60vh video background */
   .hero-sound-toggle {
     bottom: auto;
-    top: calc(100vh - 4.5rem);
+    top: calc(60vh - 4.5rem);
     right: 1.5rem;
     width: 44px;
     height: 44px;
@@ -1796,9 +1903,9 @@ body.scroll-locked {
 .form-textarea {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid var(--border);
+  border: 1px solid hsla(220, 20%, 30%, 0.3);
   border-radius: 0.5rem;
-  background: var(--background);
+  background: hsla(220, 25%, 4%, 0.6) !important;
   color: var(--foreground);
   font-size: 0.875rem;
   transition: all 0.3s ease;
@@ -1807,9 +1914,9 @@ body.scroll-locked {
 .form-input:focus,
 .form-textarea:focus {
   outline: none;
-  border-color: var(--ring);
-  box-shadow: 0 0 0 2px var(--ring);
-  box-shadow-opacity: 0.2;
+  border-color: var(--primary);
+  box-shadow: 0 0 12px hsla(240, 100%, 65%, 0.25);
+  background: hsla(220, 25%, 4%, 0.8) !important;
 }
 
 .form-error {
@@ -1830,7 +1937,8 @@ body.scroll-locked {
 }
 
 .contact-item {
-  padding: 1rem;
+  display: block;
+  padding: 1.25rem 1.5rem;
   border-radius: var(--radius);
   transition: all 0.3s ease;
   text-decoration: none;

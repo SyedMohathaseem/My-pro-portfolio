@@ -1732,6 +1732,9 @@ body.scroll-locked {
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .project-image {
@@ -1762,6 +1765,9 @@ body.scroll-locked {
 
 .project-content {
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .project-title {
@@ -1787,6 +1793,56 @@ body.scroll-locked {
 .project-buttons {
   display: flex;
   gap: 0.5rem;
+  margin-top: auto;
+}
+
+/* Go Live Hover Overlay */
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 15, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.btn-go-live {
+  background: var(--gradient-primary);
+  color: #ffffff;
+  padding: 0.85rem 2rem;
+  border-radius: 100px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.95rem;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.35); /* Matched blue-violet shadow */
+  transform: translateY(15px) scale(0.9);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-card:hover .btn-go-live {
+  transform: translateY(0) scale(1);
+}
+
+.btn-go-live:hover {
+  background: var(--gradient-secondary); /* Matched secondary gradient on hover */
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.55); /* Matched purple shadow */
+  transform: scale(1.05);
+  color: #ffffff;
 }
 
 /* Resume Section */
